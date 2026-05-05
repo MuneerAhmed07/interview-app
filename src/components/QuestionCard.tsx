@@ -26,12 +26,11 @@ export function QuestionCard({ item }: QuestionCardProps) {
   };
 
   return (
-    <div 
-      className={`group border rounded-xl overflow-hidden transition-all duration-200 ${
-        isOpen 
-          ? 'bg-white border-slate-200 shadow-sm ring-2 ring-blue-500/10' 
-          : 'bg-white border-slate-200 shadow-sm hover:border-slate-300'
-      }`}
+    <div
+      className={`group border rounded-xl overflow-hidden transition-all duration-200 ${isOpen
+        ? 'bg-white border-slate-200 shadow-sm ring-2 ring-blue-500/10'
+        : 'bg-white border-slate-200 shadow-sm hover:border-slate-300'
+        }`}
       id={`question-${item.id}`}
     >
       <button
@@ -39,15 +38,24 @@ export function QuestionCard({ item }: QuestionCardProps) {
         className="w-full text-left p-6 flex items-start justify-between gap-4 focus:outline-none"
         aria-expanded={isOpen}
       >
-        <div className="flex-1 flex gap-4">
-          <span className={`px-2.5 py-0.5 mt-1 rounded text-[10px] font-bold uppercase tracking-wider h-fit ${getCategoryStyles(item.category)}`}>
+        <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 flex-1">
+
+          <span
+            className={`px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider h-fit w-fit
+          ${getCategoryStyles(item.category)}`}
+          >
             {item.category}
           </span>
-          <div>
-            <h3 className={`text-lg transition-colors leading-tight ${isOpen ? 'font-semibold text-slate-900' : 'font-medium text-slate-800'}`}>
+
+          <div className="flex-1">
+            <h3
+              className={`text-sm sm:text-lg leading-tight transition-colors
+              ${isOpen ? 'font-semibold text-slate-900' : 'font-medium text-slate-800'}`}
+            >
               {item.question}
             </h3>
           </div>
+
         </div>
         <div className="flex items-center gap-4 shrink-0 mt-1">
           {!isOpen && (
@@ -67,9 +75,9 @@ export function QuestionCard({ item }: QuestionCardProps) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2, ease: [0.32, 0.72, 0, 1] }}
           >
-            <div className="px-6 pb-8 ml-4 pl-16">
+            <div className="px-4 sm:px-6 pb-6 sm:pb-8 pl-4 sm:pl-16">
               <div className="prose prose-slate max-w-none">
-                <p className="text-slate-600 leading-relaxed whitespace-pre-line">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed whitespace-pre-line">
                   {item.answer}
                 </p>
               </div>
