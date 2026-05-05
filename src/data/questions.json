@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "Networking",
+    "question": "What happens when you type a URL in your browser and press Enter?",
+    "answer": "1. DNS Lookup: The browser checks its cache, then the OS cache, then asks the DNS server to resolve the domain to an IP address.\n2. TCP Handshake: The browser establishes a connection with the server using a three-way handshake (SYN, SYN-ACK, ACK).\n3. SSL/TLS Handshake: If it's HTTPS, a secure connection is negotiated.\n4. HTTP Request: The browser sends an HTTP request for the page.\n5. Server Response: The server processes the request and sends back an HTTP response (usually HTML).\n6. Rendering: The browser parses HTML, CSS, and JS to display the page."
+  },
+  {
+    "id": 2,
+    "category": "Coding",
+    "question": "Explain the concept of closures in JavaScript.",
+    "answer": "A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives a function access to its outer scope even after the outer function has finished executing."
+  },
+  {
+    "id": 3,
+    "category": "Personal",
+    "question": "Tell me about a time you handled a difficult conflict with a teammate.",
+    "answer": "Focus on the STAR method (Situation, Task, Action, Result). Mention a specific project, explain the root cause of the conflict (e.g., technical disagreement), how you approached them privately to listen, and the compromise or resolution reached that benefited the project."
+  },
+  {
+    "id": 4,
+    "category": "Networking",
+    "question": "What is the difference between TCP and UDP?",
+    "answer": "TCP (Transmission Control Protocol) is connection-oriented, reliable (guarantees delivery), and ordered, but slower due to overhead. UDP (User Datagram Protocol) is connectionless, potentially unreliable, and unordered, but faster and lower latency, making it ideal for streaming and gaming."
+  },
+  {
+    "id": 5,
+    "category": "Coding",
+    "question": "What is the 'Virtual DOM' in React?",
+    "answer": "The Virtual DOM is a lightweight copy of the actual DOM. When state changes, React creates a new virtual DOM, compares it with the previous one (diffing), and calculates the most efficient way to update the real DOM (reconciliation)."
+  },
+  {
+    "id": 6,
+    "category": "System Design",
+    "question": "How would you scale an application from 100 to 1,000,000 users?",
+    "answer": "1. Vertical scaling (more RAM/CPU).\n2. Horizontal scaling (more instances + Load Balancer).\n3. Caching (Redis/Memcached).\n4. Database optimization (Indexing, Sharding, Replication).\n5. CDN for static assets.\n6. Microservices architecture."
+  }
+]
