@@ -2,37 +2,253 @@
   {
     "id": 1,
     "category": "Networking",
-    "question": "What happens when you type a URL in your browser and press Enter?",
-    "answer": "1. DNS Lookup: The browser checks its cache, then the OS cache, then asks the DNS server to resolve the domain to an IP address.\n2. TCP Handshake: The browser establishes a connection with the server using a three-way handshake (SYN, SYN-ACK, ACK).\n3. SSL/TLS Handshake: If it's HTTPS, a secure connection is negotiated.\n4. HTTP Request: The browser sends an HTTP request for the page.\n5. Server Response: The server processes the request and sends back an HTTP response (usually HTML).\n6. Rendering: The browser parses HTML, CSS, and JS to display the page."
+    "question": "A user reports ke internet kaam nahi kar raha. Aap kaise troubleshoot karenge?",
+    "answer": "Sir, main step-by-step troubleshooting follow karunga. \nSabse pehle main physical connections check karunga, jaise Ethernet cable properly lagi hai ya WiFi connected hai ya nahi.\nUske baad main IP configuration check karunga using commands like ipconfig ya ifconfig.\nPhir main connectivity test karunga by pinging:\n1. localhost (127.0.0.1) \n2. default gateway \n3. external IP like 8.8.8.8 \n Agar external IP ping ho rahi ho lekin websites open na ho rahi hon, toh mujhe DNS issue ka doubt hoga. Phir main DNS settings check karunga ya nslookup use karunga. \nLast mein, agar zarurat ho toh network adapter ya router restart karunga."
   },
   {
     "id": 2,
-    "category": "Coding",
-    "question": "Explain the concept of closures in JavaScript.",
-    "answer": "A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives a function access to its outer scope even after the outer function has finished executing."
+    "category": "Networking",
+    "question": "System IP address ko ping kar raha hai lekin websites open nahi ho rahi. Issue kya ho sakta hai?",
+    "answer": "Sir, yeh usually DNS issue hota hai. \nMatlab system network tak toh pahunch raha hai, lekin domain names ko IP address mein resolve nahi kar paa raha. \nMain DNS configuration check karunga, nslookup se test karunga, aur DNS cache flush karunga. Agar issue solve na ho, toh main Google DNS (8.8.8.8) use karne ka try karunga."
   },
   {
     "id": 3,
-    "category": "Personal",
-    "question": "Tell me about a time you handled a difficult conflict with a teammate.",
-    "answer": "Focus on the STAR method (Situation, Task, Action, Result). Mention a specific project, explain the root cause of the conflict (e.g., technical disagreement), how you approached them privately to listen, and the compromise or resolution reached that benefited the project."
+    "category": "Coding",
+    "question": "OOP kya hota hai?",
+    "answer": "Sir, Object-Oriented Programming ek programming paradigm hai jo objects aur classes par based hota hai. \nIske main principles hain: \n1. Encapsulation: Data aur methods ko ek saath wrap karna \n2. Inheritance: Parent class se code reuse karna \n3. Polymorphism: Same function ka different behavior \n4. Abstraction: Implementation details hide karna \nYeh code ko modular, maintainable aur scalable banata hai."
   },
   {
     "id": 4,
-    "category": "Networking",
-    "question": "What is the difference between TCP and UDP?",
-    "answer": "TCP (Transmission Control Protocol) is connection-oriented, reliable (guarantees delivery), and ordered, but slower due to overhead. UDP (User Datagram Protocol) is connectionless, potentially unreliable, and unordered, but faster and lower latency, making it ideal for streaming and gaming."
+    "category": "Coding",
+    "question": "API kya hoti hai?",
+    "answer": "Sir, API (Application Programming Interface) ek medium hota hai jiske through different software systems ek doosre se communicate karte hain. \nJaise frontend jab backend se data leta hai, woh API ke through request karta hai. \nAPIs web development, mobile apps aur integrations mein bohat use hoti hain."
   },
   {
     "id": 5,
     "category": "Coding",
-    "question": "What is the 'Virtual DOM' in React?",
-    "answer": "The Virtual DOM is a lightweight copy of the actual DOM. When state changes, React creates a new virtual DOM, compares it with the previous one (diffing), and calculates the most efficient way to update the real DOM (reconciliation)."
+    "question": "Docker kya hai aur kyun use hota hai?",
+    "answer": "Sir, Docker ek containerization platform hai jo application aur uski dependencies ko ek container mein package karta hai. \nIska faida yeh hai ke application har environment mein same tarah se run karta hai. \nContainers lightweight hote hain aur fast start hote hain, is liye deployment aur DevOps mein widely use hote hain."
   },
   {
     "id": 6,
+    "category": "Coding",
+    "question": "Virtual Machine aur Docker container mein kya difference hai?",
+    "answer": "Sir, Virtual Machine mein poora operating system hota hai aur woh hypervisor par run hoti hai, is liye heavy hoti hai. \nJab ke Docker containers host OS ka kernel share karte hain aur sirf required dependencies rakhte hain, is liye lightweight aur fast hote hain."
+  },
+  {
+    "id": 7,
+    "category": "Coding",
+    "question": "Git kya hai aur important kyun hai?",
+    "answer": "Sir, Git ek distributed version control system hai jo code changes ko track karta hai. \nYeh developers ko collaboration mein help karta hai, project ka history maintain karta hai aur multiple versions manage karne mein madad deta hai."
+  },
+  {
+    "id": 8,
     "category": "System Design",
-    "question": "How would you scale an application from 100 to 1,000,000 users?",
-    "answer": "1. Vertical scaling (more RAM/CPU).\n2. Horizontal scaling (more instances + Load Balancer).\n3. Caching (Redis/Memcached).\n4. Database optimization (Indexing, Sharding, Replication).\n5. CDN for static assets.\n6. Microservices architecture."
-  }
+    "question": "Agar server suddenly down ho jaye toh aap kya karenge?",
+    "answer": "Sir, sabse pehle main check karunga ke server reachable hai ya nahi using ping ya remote access. \nPhir main system logs aur running services check karunga issue identify karne ke liye. Agar koi service down ho toh main usay restart karunga. \nAgar issue complex ho, toh main logs collect karke escalate karunga. \nMain bina soche samjhe reboot nahi karunga, balki proper troubleshooting follow karunga."
+  },
+  {
+    "id": 9,
+    "category": "HR Question",
+    "question": "Aap yeh job kyun chahte hain?",
+    "answer": "Sir, mujhe yeh role is liye pasand hai kyunki yeh meri skills—networking, system support aur tools jaise Docker aur Git—se match karta hai. \nMujhe technical problems solve karna pasand hai aur main aise environment mein kaam karna chahta hoon jahan systems reliable aur efficient hon. \nMujhe lagta hai main is role mein achha contribute kar sakta hoon aur saath hi seekhne ka bhi moka milega."
+  },
+  {
+    "id": 10,
+    "category": "Personal",
+    "question": "Introduce yourself!",
+    "answer": "My name is Muneer Ahmed Khan, and I am from Mianwali. I have completed my Matriculation from Jinnah Public High School Sawans, followed by my Intermediate from Punjab Group of Colleges. I recently completed my BS in Information Technology from the University of Mianwali. \n Currently, I am working as an online web developer, where I build and manage web-based applications. Alongside this, I also have experience working as a Computer Instructor, where I teach basic computing and IT-related subjects. \nI am very interested in the System Support Officer position, as it aligns with my technical background and problem-solving skills, especially in areas like networking, troubleshooting, and system support."
+  },
+  {
+    "id": 11,
+    "category": "Git Question",
+    "question": "Explain basic Git workflow",
+    "answer": "A typical Git workflow includes: \ngit clone to copy a repository \ngit add to stage changes \ngit commit to save changes locally \ngit push to upload changes to remote repository \ngit pull to update local code \nThis workflow helps maintain proper version control and collaboration."
+  },
+  {
+    "id": 12,
+    "category": "Networking",
+    "question": "System “No IP Address” show kar raha hai. Aap kya karenge?",
+    "answer": "Sir, sabse pehle main check karunga ke DHCP enabled hai ya nahi. \nPhir main ipconfig /release aur ipconfig /renew run karke new IP request karunga. \nAgar issue solve na ho, toh main DHCP server availability, network cable ya WiFi connection check karunga. \nTesting ke liye main temporary static IP bhi assign kar sakta hoon."
+  },
+  {
+    "id": 13,
+    "category": "Networking",
+    "question": "Do systems mein IP conflict aa raha hai. Kaise resolve karenge?",
+    "answer": "Sir, yeh tab hota hai jab do devices same IP use kar rahe hote hain. \nMain dono systems identify karke ek ko different IP assign karunga ya DHCP par shift karunga. \nSaath hi DHCP server bhi check karunga ke duplicate IP assign na kar raha ho."
+  },
+  {
+    "id": 14,
+    "category": "Networking",
+    "question": "User WiFi se connected hai lekin internet nahi chal raha. Kya karenge?",
+    "answer": "Sir, pehle main check karunga ke valid IP assign hua hai ya nahi. \nPhir gateway aur external IP ko ping karunga. \nAgar gateway ping ho raha hai lekin internet nahi chal raha, toh main router ya ISP issue check karunga aur DNS settings verify karunga."
+  },
+  {
+    "id": 15,
+    "category": "Networking",
+    "question": "User shared folder access nahi kar paa raha. Kya check karenge?",
+    "answer": "Sir, pehle main ping karke connectivity check karunga. \nPhir sharing permissions, firewall settings aur dono systems same network par hain ya nahi, yeh verify karunga. \nSaath hi file sharing enabled hai ya nahi, yeh bhi check karunga."
+  },
+  {
+    "id": 16,
+    "category": "Networking",
+    "question": "Office mein network slow hai. Aap kya karenge?",
+    "answer": "Sir, main bandwidth usage check karunga aur heavy traffic ya downloads identify karunga. \nPhir ping se latency test karunga. \nMain switches aur routers bhi check karunga aur agar zarurat ho toh malware scan bhi karunga."
+  },
+  {
+    "id": 17,
+    "category": "Networking",
+    "question": "System default gateway ko ping nahi kar raha. Kya karenge?",
+    "answer": "Sir, main IP configuration aur subnet mask check karunga. \nPhir physical connection ya WiFi verify karunga. \nAgar issue rahe, toh router status check karunga ya kisi aur device se test karunga."
+  },
+  {
+    "id": 18,
+    "category": "Networking",
+    "question": "Sirf ek website open nahi ho rahi. Issue kya ho sakta hai?",
+    "answer": "Sir, main check karunga ke website globally down toh nahi hai. \nPhir browser cache clear aur DNS flush karunga. \nMain dusre device ya network se bhi try karunga confirm karne ke liye."
+  },
+  {
+    "id": 19,
+    "category": "Networking",
+    "question": "VPN connect nahi ho raha. Aap kya karenge?",
+    "answer": "Sir, sabse pehle internet connectivity check karunga. \nPhir VPN credentials aur server address verify karunga. \nFirewall settings aur required ports bhi check karunga."
+  },
+  {
+    "id": 20,
+    "category": "Networking",
+    "question": "Network printer kaam nahi kar raha. Kya check karenge?",
+    "answer": "Sir, main check karunga ke printer on hai aur network se connected hai. \nPhir printer IP ping karunga. \nDrivers aur sharing settings bhi verify karunga."
+  },
+  {
+    "id": 21,
+    "category": "Networking",
+    "question": "User ko baar baar disconnection ho raha hai. Kya karenge?",
+    "answer": "Sir, main WiFi signal strength, cable condition aur network adapter check karunga. \nSaath hi IP conflicts ya router issues bhi verify karunga."
+  },
+  {
+    "id": 22,
+    "category": "Networking",
+    "question": "Ping response bohat high aa raha hai. Kya reason ho sakta hai?",
+    "answer": "Sir, yeh network congestion ya routing issue ho sakta hai. \nMain bandwidth usage check karunga, traceroute run karunga aur network devices inspect karunga" 
+  },
+  {
+    "id": 23,
+    "category": "Networking",
+    "question": "User internal server access nahi kar paa raha. Kya karenge?",
+    "answer": "Sir, main ping karke server reachability check karunga. \nPhir firewall rules aur user permissions verify karunga. \nSaath hi check karunga ke server services running hain ya nahi."
+  },
+  {
+    "id": 24,
+    "category": "Networking",
+    "question": "Office ke devices aapas mein communicate nahi kar rahe. Kya issue ho sakta hai?",
+    "answer": "Sir, main IP aur subnet mask check karunga. \nAgar devices different subnet mein hain, toh configuration correct karunga ya proper routing setup karunga."
+  },
+  {
+    "id": 25,
+    "category": "Networking",
+    "question": "Sab users ko achanak IP milna band ho gaya. Kya karenge?",
+    "answer": "Sir, yeh DHCP server issue ho sakta hai. \nMain DHCP service check aur restart karunga. \nTemporary solution ke liye static IP assign kar sakta hoon."
+  },
+  {
+    "id": 26,
+    "category": "Networking",
+    "question": "Application network par kaam nahi kar rahi. Kya karenge?",
+    "answer": "Sir, main firewall settings check karunga aur testing ke liye temporarily disable karunga. \nAgar issue confirm ho jaye, toh required ports allow karunga."
+  },
+  {
+    "id": 27,
+    "category": "Networking",
+    "question": "System DNS error show kar raha hai. Kya karenge?",
+    "answer": "Sir, main DNS configuration check karunga aur nslookup se test karunga. \nAgar zarurat ho, toh alternate DNS server use karunga."
+  },
+  {
+    "id": 28,
+    "category": "Networking",
+    "question": "Network unstable ho gaya hai. Kya reason ho sakta hai?",
+    "answer": "Sir, yeh network loop ho sakta hai. \nMain switch connections check karunga aur redundant paths disable karunga."
+  },
+  {
+    "id": 29,
+    "category": "Networking",
+    "question": "Switch ka ek port kaam nahi kar raha. Kya karenge?",
+    "answer": "Sir, main dusra cable ya device use karke test karunga. \nPhir switch configuration aur port status check karunga."
+  },
+  {
+    "id": 30,
+    "category": "Networking",
+    "question": "User emails receive kar raha hai lekin send nahi kar paa raha. Kya karenge?",
+    "answer": "Sir, main SMTP settings, ports aur firewall restrictions check karunga. \nSaath hi authentication settings verify karunga."
+  },
+  {
+    "id": 31,
+    "category": "Networking",
+    "question": "Remote Desktop kaam nahi kar raha. Kya check karenge?",
+    "answer": "Sir, main check karunga ke RDP enabled hai ya nahi, IP address verify karunga aur port 3389 open hai ya nahi. \nFirewall aur network connectivity bhi check karunga."
+  },
+  {
+    "id": 32,
+    "category": "System Installation",
+    "question": "Aap ek new employee ke liye computer system kaise install aur configure karenge?",
+    "answer": "Sir, sabse pehle main organization ke standards ke mutabiq operating system install karunga. \nUske baad required software install karunga jaise office tools, antivirus aur department-specific applications. \nPhir main network settings configure karunga, agar zarurat ho toh system ko domain mein join karunga aur security policies apply karunga. \nFinally, main system ko properly test karunga taake sab kuch smoothly kaam kare, aur uske baad user ko handover karunga."
+  },
+  {
+    "id": 33,
+    "category": "System Installation",
+    "question": "User complain karta hai ke system bohat slow hai. Aap kya karenge?",
+    "answer": "Sir, sabse pehle main system resources check karunga jaise CPU, RAM aur disk usage. \nPhir main unnecessary background applications ya malware check karunga. \nMain software updates, disk space aur possible hardware issues bhi verify karunga. \nFindings ke basis par main unnecessary programs remove karunga, system update karunga ya zarurat ho toh hardware upgrade suggest karunga."
+  },
+  {
+    "id": 34,
+    "category": "System Installation",
+    "question": "Aap organization mein smooth network operation kaise ensure karte hain?",
+    "answer": "Sir, main regularly network performance monitor karta hoon, aur routers aur switches jaise devices ko check karta hoon. \nMain ensure karta hoon ke sab systems ki IP configuration sahi ho. \nSaath hi routine maintenance karta hoon, firmware updates apply karta hoon aur connectivity issues ko quickly resolve karta hoon taake downtime kam se kam ho."
+  },
+  {
+    "id": 35,
+    "category": "System Installation",
+    "question": "Aap systems aur data ko secure karne ke liye kya steps lenge?",
+    "answer": "Sir, main sab systems par antivirus aur firewall implement karunga, aur regular updates aur patches ensure karunga. \nStrong password policies enforce karunga. \nMain unauthorized access restrict karunga, regular backups maintain karunga aur users ko security risks jaise phishing attacks ke baare mein educate karunga."
+  },
+  {
+    "id": 36,
+    "category": "System Installation",
+    "question": "Aap software-related issues ko kaise handle karte hain?",
+    "answer": "Sir, sabse pehle main issue ko samajhne ki koshish karta hoon, error aur user actions analyze karta hoon. \nPhir main troubleshooting karta hoon jaise logs check karna, software reinstall ya update karna. \nAgar issue solve na ho, toh main usay relevant team ya vendor ko escalate karta hoon, aur ensure karta hoon ke user ka kaam minimum disturb ho."
+  },
+  {
+    "id": 37,
+    "category": "Personal",
+    "question": "Aap PERA mein System Support Officer kyun join karna chahte hain?",
+    "answer": "Sir, main PERA join karna chahta hoon kyunki yeh ek professional organization hai jahan technology aur system reliability bohat important hai. \nMujhe lagta hai yeh role meri technical skills aur IT support aur networking ke interest se perfectly match karta hai. \nMain aise environment mein kaam karna chahta hoon jahan main professionally grow kar sakoon, organization ki efficiency mein contribute kar sakoon aur responsibility ke saath kaam kar sakoon."
+  },
+  {
+    "id": 38,
+    "category": "Personal",
+    "question": "Aapki strengths kya hain?",
+    "answer": "Sir, meri main strengths problem-solving, quick learning aur troubleshooting ke waqt patience maintain karna hain. \nMain technical issues ko panic karne ke bajaye step-by-step handle karna pasand karta hoon. \nMain team environment mein bhi achha kaam karta hoon aur technical issues ko clear aur professional way mein communicate karne ki koshish karta hoon."
+  },
+  {
+    "id": 39,
+    "category": "Personal",
+    "question": "Aapki weakness kya hai?",
+    "answer": "Sir, maine yeh notice kiya hai ke kabhi kabhi main har cheez ko perfect banane mein extra time spend kar deta hoon. \nLekin main apni time management skills improve kar raha hoon aur seekh raha hoon ke quality aur efficiency ke darmiyan balance kaise maintain kiya jaye."
+  },
+  {
+    "id": 40,
+    "category": "Personal",
+    "question": "Aap khud ko aglay 5 saalon mein kahan dekhte hain?",
+    "answer": "Sir, aglay 5 saalon mein main khud ko ek skilled IT professional ke taur par dekhna chahta hoon jise system administration, networking aur infrastructure support ka strong experience ho. \nMain advanced technologies seekhna chahta hoon aur organization mein zyada responsibilities handle karna chahta hoon."
+  },
+  {
+    "id": 41,
+    "category": "PERA",
+    "question": "Aap PERA ke bare mein kya jante hain?",
+    "answer": "Sir, PERA ka full form Punjab Enforcement and Regulatory Authority hai. Yeh Government of Punjab ne Punjab Enforcement and Regulation Act 2024 ke under establish kiya hai. \nIska main purpose inflation control, encroachments, market regulation aur public welfare se related laws ko effectively enforce karna hai. \nPERA ka aim transparency, regulatory compliance aur modern enforcement system ko improve karna hai poore Punjab mein. \nIs authority ki chairperson Chief Minister Punjab Maryam Nawaz Sharif hain, jabke Capt. Farrukh Atiq Khan Director General ke taur par serve kar rahe hain. \nMujhe lagta hai ke PERA Punjab mein law enforcement aur public service ko modern aur efficient banane ke liye ek important initiative hai."
+  },
+{
+  "id": 42,
+  "category": "GK",
+  "question": "Who is the current President of Pakistan, Prime Minister of Pakistan, Chief of Army Staff, Inspector General of Punjab Police, Director General of PERA, and Inspector General of Islamabad Police?",
+  "answer": "• President of Pakistan: Asif Ali Zardari\n• Prime Minister of Pakistan: Shehbaz Sharif\n• Chief of Army Staff: General Asim Munir\n• Inspector General Punjab Police: Dr. Usman Anwar\n• Director General PERA: Capt. Farrukh Atiq Khan\n• Inspector General Islamabad Police: Ali Nasir Rizvi" 
+}
 ]

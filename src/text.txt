@@ -1,0 +1,20 @@
+category: Networking
+category: Coding
+category: Personal
+category: System Design
+category: System Installation
+
+
+  {
+    "id": 1,
+    "category": "Networking",
+    "question": "",
+    "answer": ""
+  },
+
+****************
+Upload a Project when changing
+git add .
+git commit -m "update"
+git push origin main
+npm run deploy
