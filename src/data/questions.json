@@ -424,5 +424,143 @@
   "category": "Atomic Networking",
   "question": "As a certified professional (CCNP/CDCP), how do you ensure High Availability (HA) in a Data Centre Network Architecture?",
   "answer": "Device Level: Dual Power Supplies implementation (A-feed and B-feed from separate UPS sources) aur redundant supervisor engines use karenge switches mein.\n\nLink & Topology Level: Link level redundancy ke liye LACP / EtherChannel design karenge. Topology loop-prevention aur fast convergence ke liye core layers par Multi-chassis EtherChannel technologies jaise Cisco ka vPC (Virtual Port Channel) ya StackWise-Virtual use karenge.\n\nGateway Layer: Redundant next-hop redundancy ke liye FHRP protocols jaise HSRP / VRRP customize karenge."
+},
+{
+  "id": 72,
+  "category": "Network",
+  "question": "Can you explain the OSI Model and the function of each layer?",
+  "answer": "OSI ka full form Open Systems Interconnection hai. Yeh ek conceptual model hai jo different networking devices aur systems ke darmiyan communication ko standardize karne ke liye use hota hai.\n\nOSI model mein 7 layers hoti hain, aur har layer ka apna specific function hota hai.\n\nLayer 7 - Application Layer\n1.Yeh user ke sab se qareeb layer hoti hai.\n2. Yeh applications ko network services provide karti hai. \n3. Is layer ke protocols HTTP, HTTPS, FTP, SMTP, DNS hain.\n4. Example: Jab hum web browser mein website open karte hain to communication Application layer ke through hoti hai.\n\nLayer 6 - Presentation Layer\n1. Yeh data ko ek format se doosre format mein convert karti hai. \n2. Iska kaam data translation, encryption/decryption aur compression hai.\n3. Example: SSL/TLS encryption aur image/video encoding is se related hain.\n\nLayer 5 - Session Layer\n1. Yeh do devices ke darmiyan session ko establish, maintain aur terminate karti hai.\n2. Communication ko synchronize karti hai aur agar interruption ho jaye to recovery mein help karti hai.\n3. Example: Client aur server ke darmiyan login session maintain karna.\n\nLayer 4 - Transport Layer\n1. Yeh end-to-end communication provide karti hai.\n2. Iske functions mein segmentation, flow control, error recovery aur reliability shamil hain. \n3. TCP aur UDP isi layer par operate karte hain.\n\nLayer 3 - Network Layer\n1. Yeh logical addressing aur routing ke liye responsible hoti hai.\n2. Data packets ke liye best path select karti hai.\n3. Protocols: IP, ICMP, Routing protocols.\n\nLayer 2 - Data Link Layer\n1. Yeh MAC address ke zariye communication karti hai. \n2. Iska kaam framing, error detection aur media access control hai.\n\nLayer 1 - Physical Layer\n1. Yeh raw bits ko physical medium ke through transmit karti hai.\n2. Is mein cables, connectors aur electrical signals shamil hote hain."
+},
+{
+  "id": 73,
+  "category": "Network",
+  "question": "Which devices operate at each OSI Layer?",
+  "answer": "Application Layer\n\u2022 Proxy Server, Application Gateway\n\nPresentation Layer\n\u2022 SSL Accelerators, Encryption Devices\n\nSession Layer\n\u2022 Session Gateways\n\nTransport Layer\n\u2022 Firewall, Load Balancer\n\nNetwork Layer\n\u2022 Router, Layer 3 Switch\n\nData Link Layer\n\u2022 Switch, Bridge, Wireless Access Point\n\nPhysical Layer\n\u2022 Hub, Repeater, Cables"
+},
+{
+  "id": 74,
+  "category": "Network",
+  "question": "What is the difference between OSI Model and TCP/IP Model?",
+  "answer": "OSI model ek reference ya theoretical model hai, jabke TCP/IP ek practical model hai jo internet mein use hota hai.\n\nOSI Model\n\u2022 7 Layers hoti hain\n\u2022 Reference model hai \n\u2022 Presentation aur Session alag layers hain\n\u2022 Physical aur Data Link alag hain\n\nTCP/IP Model\n\u2022 4 Layers hoti hain \n\u2022 Practical implementation hai\n\u2022 Dono Application layer mein merge hain \n\u2022 Network Access layer mein combine hain"
+},
+{
+  "id": 75,
+  "category": "Network",
+  "question": "At which layer do TCP and UDP operate?",
+  "answer": "TCP aur UDP OSI Model ki Transport Layer (Layer 4) par operate karte hain.\n\nTCP (Transmission Control Protocol):\n\u2022 Reliable communication provide karta hai.\n\u2022 Connection establish karta hai.\n\u2022 Error checking aur retransmission perform karta hai.\n\u2022 Examples: HTTP, HTTPS, FTP, Email\n\nUDP (User Datagram Protocol):\n\u2022 Connectionless aur fast protocol hai.\n\u2022 Kam overhead ke sath data send karta hai.\n\u2022 Examples: DNS, Online Gaming, Video Streaming"
+},
+{
+  "id": 76,
+  "category": "Network",
+  "question": "Can you explain the role of Session and Presentation Layer?",
+  "answer": "Session Layer (Layer 5):\n\u2022 Devices ke darmiyan communication session ko establish, maintain aur terminate karti hai. \n\u2022 Synchronization aur recovery provide karti hai.\n\nPresentation Layer (Layer 6):\n\u2022 Data formatting aur translation karti hai.\n\u2022 Encryption aur decryption handle karti hai.\n\u2022 Compression aur decompression perform karti hai.\n\nSimple words mein:\n\u2022 Session Layer communication ko manage karti hai.\n\u2022 Presentation Layer data ko readable aur secure banati hai."
+},
+{
+  "id": 77,
+  "category": "Network",
+  "question": "At which OSI layer does SSL/TLS operate?",
+  "answer": "Traditional OSI model ke mutabiq, SSL/TLS ko Presentation Layer (Layer 6) se associate kiya jata hai kyun ke yeh encryption aur decryption ka kaam karta hai.\n\nLekin practical TCP/IP implementation mein SSL/TLS Application Layer aur Transport Layer ke darmiyan kaam karta hai aur TCP ke upar operate karta hai.\n\nHTTPS = HTTP + TLS over TCP Port 443"
+},
+{
+  "id": 78,
+  "category": "Network",
+  "question": "What is an IP Address and what are its types?",
+  "answer": "IP ka full form Internet Protocol Address hai. IP address ek unique logical address hota hai jo network mein har device ko identify karne ke liye assign kiya jata hai.\n\nJis tarah har ghar ka ek address hota hai, usi tarah network mein har device ka apna IP address hota hai jiske zariye devices ek doosre se communicate karte hain.\n\nIP address ki do main types hain:\n\n1. IPv4 (Internet Protocol Version 4)\n\u2022 32-bit address hota hai.\n\u2022 4 octets mein likha jata hai.\n\u2022 Example: 192.168.1.10\n\u2022 Total addresses lagbhag 4.3 billion hain.\n\n2. IPv6 (Internet Protocol Version 6)\n\u2022 128-bit address hota hai.\n\u2022 Hexadecimal format mein likha jata hai.\n\u2022 Example: 2001:0db8:85a3:0000:0000:8a2e:0370:7334\n\u2022 Bahut zyada addresses provide karta hai."
+},
+{
+  "id": 79,
+  "category": "Network",
+  "question": "What are Private and Public IP Addresses?",
+  "answer": "Private IP addresses internal networks ke andar use hote hain aur internet par directly accessible nahi hote.\n\nPrivate IP ranges:\n\u2022 Class A: 10.0.0.0 - 10.255.255.255 (/8)\n\u2022 Class B: 172.16.0.0  172.31.255.255 (/12)\n\u2022 Class C: 192.168.0.0 - 192.168.255.255 (/16)\n\nExample:\n\u2022 192.168.1.10\n\nPublic IP Address\n\u2022 Public IP addresses internet par unique hote hain aur ISP ke through assign kiye jate hain.\n\nExample:\n\u2022 A company's website server having a public IP that is reachable from anywhere on the internet."
+},
+{
+  "id": 80,
+  "category": "Network",
+  "question": "What is Subnetting and Why is it Required?",
+  "answer": "Subnetting ka matlab ek bade network ko chote-chote logical networks yani subnets mein divide karna hai.\n\nSubnetting ke benefits:\n\u2022 IP addresses ka efficient utilization hota hai.\n\u2022 Network traffic aur broadcast domains reduce hote hain.\n\u2022 Security improve hoti hai.\n\u2022 Network management easy ho jata hai.\n\u2022 Better performance milti hai."
+},
+{
+  "id": 81,
+  "category": "Network",
+  "question": "Calculate Network ID, Subnet Mask, First IP, Last IP & Broadcast Address",
+  "answer": "Calculate the details for 192.168.10.0/26.\n\n/26 ka subnet mask: 255.255.255.192\nBlock size: 256 - 192 = 64\nSubnet range: 0 - 63\n\nDetails:\n\u2022 Network ID: 192.168.10.0\n\u2022 Subnet Mask: 255.255.255.192\n\u2022 First Usable IP: 192.168.10.1\n\u2022 Last Usable IP: 192.168.10.62\n\u2022 Broadcast Address: 192.168.10.63\n\u2022 Total Hosts: 64 \n\u2022 Usable Hosts: 62\n\n\nCalculate the details for 10.10.20.0/27.\n\n/27 Subnet Mask: 255.255.255.224\nBlock size: 256 - 224 = 32\nRange: 0 - 31 \n\nDetails:\n\u2022 Network ID: 10.10.20.0\n\u2022 Subnet Mask: 255.255.255.224\n\u2022 First Usable IP: 10.10.20.1\n\u2022 Last Usable IP: 10.10.20.30\n\u2022 Broadcast Address: 10.10.20.31\n\u2022 Total Hosts: 32\n\u2022 Usable Hosts: 30\n\n\nCalculate the details for 172.16.5.128/25.\n\n/25 Subnet Mask: 255.255.255.128\nBlock size: 256 - 128 = 128\nRange: 128 - 255\n\nDetails:\n\u2022 Network ID: 172.16.5.128\n\u2022 Subnet Mask: 255.255.255.128\n\u2022 First Usable IP: 172.16.5.129\n\u2022 Last Usable IP: 172.16.5.254\n\u2022 Broadcast Address: 172.16.5.255\n\u2022 Total Hosts: 128\n\u2022 Usable Hosts: 126"
+},
+{
+  "id": 82,
+  "category": "Network",
+  "question": "What is CIDR Notation?",
+  "answer": "CIDR ka full form Classless Inter-Domain Routing ha\n\nCIDR ek method hai jisme IP address ke baad slash (/) ke sath network bits ki quantity likhi jati hai.\n\nExample:\n\u2022 192.168.1.0/24\n\u2022 10.0.0.0/8\n\nYahan /24 ka matlab hai ke pehle 24 bits network ke liye reserve hain aur baqi host addresses ke liye.\n\nCIDR ke benefits:\n\u2022 IP addresses ki wastage kam hoti hai.\n\u2022 Flexible subnetting possible hoti hai.\n\u2022 Routing tables choti aur efficient hoti hain."
+},
+{
+  "id": 83,
+  "category": "Network",
+  "question": "What is VLSM?",
+  "answer": "VLSM ka full form Variable Length Subnet Mask hai.\n\nVLSM ek technique hai jisme ek hi network ke different subnets ko different subnet masks diye jate hain according to their host requirements.\n\nExample:\n\u2022 Sales Department ko 100 hosts chahiye → /25\n\u2022 HR Department ko 25 hosts chahiye → /27\n\u2022 IT Department ko 10 hosts chahiye → /28\n\nAdvantages:\n\u2022 IP addresses ki wastage kam hoti hai.\n\u2022 Better network design possible hota hai.\n\u2022 Flexible subnet allocation milti hai.\n\u2022 Routing efficiency improve hoti hai."
+},
+{
+  "id": 84,
+  "category": "Network",
+  "question": "What is the difference between a Subnet Mask and a Wildcard Mask?",
+  "answer": "Subnet Mask:\n\u2022 Network aur host portions ko define karta hai\n\u2022 1 means network, 0 means host\n\u2022 Used in IP addressing\n\u2022 Example: 255.255.255.0\n\nWildcard Mask:\n\u2022 Matching rules ko define karta hai\n\u2022 0 means match, 1 means ignore\n\u2022 Mostly used in ACLs and routing protocols\n\u2022 Example: 0.0.0.255\n\n\nFormula:\nWildcard Mask = 255.255.255.255 - Subnet Mask\nExample:\nSubnet Mask: 255.255.255.0\nWildcard: 255.255.255.255 - 255.255.255.0 = 0.0.0.255"
+},
+{
+  "id": 85,
+  "category": "Network",
+  "question": "What is Routing?",
+  "answer": "Routing ek process hai jisme data packets ko source network se destination network tak best path ke through forward kiya jata hai.\n\nRouting ka kaam routers perform karte hain. Router apni routing table ko check karta hai aur decide karta hai ke packet ko kis next-hop ya interface ke through bhejna hai.\n\nExample:\nAgar ek user Faisalabad se Lahore ke server ko access kar raha hai, to routers multiple networks ke through best route select karke data ko destination tak pohanchate hain."
+},
+{
+  "id": 86,
+  "category": "Network",
+  "question": "What is the difference between Static and Dynamic Routing?",
+  "answer": "Static Routing:\n\u2022 Routes manually configure kiye jate hain\n\u2022 Small networks ke liye suitable hai\n\u2022 Less CPU and memory use karti hai\n\u2022 Network changes par manual update chahiye\n\u2022 More secure due to no routing advertisements\n\n\nDynamic Routing:\n\u2022 Routes automatically learn aur update hote hain\n\u2022 Large and complex networks ke liye suitable hai\n\u2022 More CPU and memory use karti hai\n\u2022 Network changes ko automatically adapt karti hai\n\u2022 Routing protocol messages exchange karti hai\n\nExample:\nEk small office jahan sirf ek internet connection ho wahan static route use kiya ja sakta hai. Lekin ek large enterprise network mein OSPF ya EIGRP jaisi dynamic routing use hoti hai."
+},
+{
+  "id": 87,
+  "category": "Network",
+  "question": "Can you compare OSPF, EIGRP, and BGP?",
+  "answer": "OSPF:\n\u2022 Full Form: Open Shortest Path First\n\u2022 Type: Link-State IGP\n\u2022 Algorithm: SPF (Dijkstra Algorithm) \n\u2022 Metric: Cost (Bandwidth based)\n\u2022 Scope: Inside an organization\n\u2022 Convergence: Fast\n\u2022 Vendor Support: Multi-vendor\n\n\nEIGRP:\n\u2022 Full Form: Enhanced Interior Gateway Routing Protocol\n\u2022 Type: Advanced Distance Vector IGP\n\u2022 Algorithm: DUAL Algorithm\n\u2022Metric: Bandwidth, Delay, Reliability, Load\n\u2022 Scope: Inside an organization\n\u2022 Convergence: Very Fast\n\u2022 Vendor Support: Mostly Cisco\n\n\nBGP:\n\u2022 Full Form: Border Gateway Protocol\n\u2022 Type: Path Vector EGP\n\u2022 Algorithm: Path Selection Algorithm\n\u2022 Metric: AS Path, Local Preference, MED etc.\n\u2022 Scope: Between different organizations/ISPs\n\u2022 Convergence: Slow but highly scalable\n\u2022 Vendor Support: Multi-vendor"
+},
+{
+  "id": 88,
+  "category": "Network",
+  "question": "Why is OSPF called a link-state protocol?",
+  "answer": "OSPF ko link-state protocol isliye kaha jata hai kyun ke har OSPF router apne directly connected links ki information collect karta hai aur us information ko Link-State Advertisements (LSAs) ki form mein dusre routers ke sath share karta hai.\n\nSab routers ke paas network ka ek complete topology database hota hai jise Link-State Database (LSDB) kehte hain.\n\nUske baad OSPF Dijkstra SPF algorithm use karke destination tak shortest path calculate karta hai."
+},
+{
+  "id": 89,
+  "category": "Network",
+  "question": "What are OSPF areas and what is the purpose of Area 0?",
+  "answer": "OSPF mein large networks ko manage karne ke liye network ko multiple areas mein divide kiya jata hai.\n\nIske benefits:\n\u2022 Routing updates reduce hote hain.\n\u2022 CPU and memory usage kam hota hai.\n\u2022 Network scalability improve hoti hai. \n\u2022 Area 0 (Backbone Area):\n\u2022 Area 0 OSPF ka central backbone area hota hai.\n\u2022 Sab doosre OSPF areas ko Area 0 ke through connect hona zaroori hai.\n\u2022 Inter-area traffic Area 0 se pass hota hai.\n\nExample:\nArea 1 aur Area 2 agar communicate karna chahte hain, to traffic Area 0 ke through route hoga."
+},
+{
+  "id": 90,
+  "category": "Network",
+  "question": "What are LSAs in OSPF?",
+  "answer": "LSA ka full form Link-State Advertisement hai.\n\nYe OSPF messages hote hain jo routers apni network information share karne ke liye use karte hain.\n\nLSAs mein information hoti hai:\n\u2022 Router IDs\n\u2022 Connected networks\n\u2022 Link status\n\u2022 Cost values\n\nYe LSAs mil kar Link-State Database (LSDB) create karte hain, jiske basis par OSPF shortest path calculate karta hai."
+},
+{
+  "id": 91,
+  "category": "Network",
+  "question": "What is the difference between OSPF and BGP?",
+  "answer": "OSPF:\n\u2022 IGP (Interior Gateway Protocol)\n\u2022 Same organization ke andar use hota hai\n\u2022 Link-State protocol \n\u2022 Fast convergence\n\u2022 Metric: Cost \n\u2022 Enterprise networks ke liye suitable \n\nBGP:\n\u2022 EGP (Exterior Gateway Protocol)\n\u2022 Different Autonomous Systems ke beech use hota hai\n\u2022 Path-Vector protocol\n\u2022 Slower convergence\n\u2022 Attributes: AS Path, Local Preference, MED\n\u2022 Internet and ISP networks ke liye suitable"
+},
+{
+  "id": 92,
+  "category": "Network",
+  "question": "When would you use BGP instead of OSPF?",
+  "answer": "BGP tab use kiya jata hai jab hame different Autonomous Systems (AS) ke darmiyan routing karni ho.\n\nExamples:\n\u2022 ISP se internet routes exchange karna.\n\u2022 Ek company ke multiple ISPs ke sath connections hona (multi-homing).\n\u2022 Large-scale internet routing.\n\nOSPF internal enterprise networks ke liye better hai, jabke BGP global internet routing ke liye use hota hai."
+},
+{
+  "id": 93,
+  "category": "Network",
+  "question": "What is Route Summarization?",
+  "answer": "Route summarization ek technique hai jisme multiple smaller network routes ko combine karke ek single summarized route banaya jata hai.\n\nExample:\n\nIndividual routes:\n\u2022 192.168.1.0/24\n\u2022 192.168.2.0/24\n\u2022 192.168.3.0/24\n\u2022 192.168.4.0/24\n\nUnhe summarize karke ek larger route advertise kiya ja sakta hai (depending on address boundaries).\n\nBenefits:\n\u2022 Routing table ka size kam hota hai.\n\u2022 CPU aur memory usage reduce hota hai.\n\u2022 Routing updates kam hote hain.\n\u2022 Network stability improve hoti hai."
+},
+{
+  "id": 94,
+  "category": "Network",
+  "question": "What is the difference between Interior and Exterior Gateway Protocols?",
+  "answer": "Interior Gateway Protocol (IGP):\n\u2022 Ek Autonomous System ke andar routing ke liye use hota hai\n\u2022 Enterprise networks mein common hai\n\u2022 Examples: OSPF, EIGRP, IS-IS\n\u2022 Faster convergence\n\n\nExterior Gateway Protocol (EGP):\n\u2022 Different Autonomous Systems ke darmiyan use hota hai\n\u2022 ISPs aur internet routing mein common hai\n\u2022 Example: BGP\n\u2022 Highly scalable but slower convergence"
 }
 ]
