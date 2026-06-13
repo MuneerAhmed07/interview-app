@@ -250,5 +250,179 @@
   "category": "GK",
   "question": "Who is the current President of Pakistan, Prime Minister of Pakistan, Chief of Army Staff, Inspector General of Punjab Police, Director General of PERA, and Inspector General of Islamabad Police?",
   "answer": "• President of Pakistan: Asif Ali Zardari\n• Prime Minister of Pakistan: Shehbaz Sharif\n• Chief of Army Staff: General Asim Munir\n• Inspector General Punjab Police: Dr. Usman Anwar\n• Director General PERA: Capt. Farrukh Atiq Khan\n• Inspector General Islamabad Police: Ali Nasir Rizvi" 
+},
+{
+  "id": 43,
+  "category": "React",
+  "question": "Virtual DOM kya hai, aur React ise kaise use karta hai?",
+  "answer": "Virtual DOM asli DOM ka ek lightweight, in-memory copy ya blueprint hota hai. Jab bhi aapke component ka state change hota hai, React directly real HTML DOM ko update nahi karta. Wo pehle 'Virtual DOM' ko update karta hai.\nIske baad React ek Diffing Algorithm ka use karke purane aur naye Virtual DOM ko compare karta hai. Is process ko Reconciliation kehte hain. Isse React ko pata chal jata hai ki exactly kis jagah change hua hai, aur wo sirf usi specific part ko real DOM me update karta hai, jisse UI Rendering bahut fast ho jati hai."
+},
+{
+  "id": 44,
+  "category": "React",
+  "question": "State aur Props me kya difference hai?",
+  "answer": "Props: Ye 'Properties' ka short form hai. Ye read-only data hote hain jo ek Parent Component se Child Component me pass kiye jate hain. Props immutable hote hain, matlab Child Component inhe khud change nahi kar sakta.\n\nState: Ye ek component ka local aur mutable data hota hai. Ise component khud manage aur update karta hai. Jab bhi State ki value change hoti hai, React us component ko automatically re-render kar deta hai taaki screen par naya data dikh sake."
+},
+{
+  "id": 45,
+  "category": "React",
+  "question": "React Hooks use karne ke kya Rules hain?",
+  "answer": "Answer: React Hooks (jaise useState, useEffect) use karne ke 2 sabse important rules hain:\n\n1. Only call Hooks at the top level: Hooks ko kabhi bhi loops, conditions (if/else), ya nested functions ke andar call nahi karna chahiye. Ye hamesha aapke component ke top level par hone chahiye taaki har render me ye sahi order me run hon. \n\n2. Only call Hooks from React Functions: Hooks ko aap sirf React Functional Components ya Custom Hooks ke andar hi call kar sakte hain, kisi regular JavaScript function me nahi."
+},
+{
+  "id": 46,
+  "category": "Node Js",
+  "question": "Node.js ko Single-Threaded kyun kaha jata hai, aur ye Concurrency kaise handle karta hai?",
+  "answer": "Node.js apne main JavaScript code ko run karne ke liye sirf ek hi main thread (Single Thread) ka use karta hai. Lekin multiple requests ko ek saath (Concurrency) handle karne ke liye ye Event Loop aur Non-blocking I/O ka use karta hai.\n\nJab bhi koi bhari kaam aata hai (jaise File Read karna ya Database Query), Node.js use background threads (libuv thread pool) ya OS ko saump deta hai aur khud agli request lene ke liye free ho jata hai. Jab wo kaam pura ho jata hai, to Callback ke zariye main thread ko result mil jata hai. Is wajah se ye hazaron connections ek saath bina block hue handle kar leta hai."
+},
+{
+  "id": 47,
+  "category": "Node Js",
+  "question": "require() aur import me kya difference hai?",
+  "answer": "require(): Ye CommonJS (CJS) module system ka hissa hai. Ye synchronous hota hai aur traditional Node.js me default roop se use hota aaya hai.\n\nimport: Ye ES6 Modules (ESM) ka hissa hai. Ye asynchronous hota hai aur modern JavaScript ka standard hai. Ise Node.js me use karne ke liye aapko package.json me 'type': 'module' set karna padta hai."
+},
+{
+  "id": 48,
+  "category": "Node Js",
+  "question": "'Callback Hell' kya hai aur ise kaise thik karte hain?",
+  "answer": "Jab hum bahut sare asynchronous operations ko ek ke andar ek nest (chain) kar dete hain, to code bahut zyada complex aur unreadable ho jata hai. Ise hi Callback Hell ya Pyramid of Doom kehte hain.\n\nIse thik karne ke liye hum Promises (using .then()) ya phir modern async/await syntax ka use karte hain, jisse hamara code bilkul seedha aur saaf (synchronous-like) dikhne lagta hai."
+},
+{
+  "id": 49,
+  "category": "PHP",
+  "question": "PHP me GET and POST Methods me kya difference hai?",
+  "answer": "GET: Is method me data URL ke saath attach hokar jata hai, isliye ye browser ki history aur URL bar me sabko dikhta hai. Ye sensitive data (jaise password) ke liye safe nahi hai. Iski data limit (around 2000 characters) hoti hai, aur ise cache ya bookmark kiya ja sakta hai.\n\nPOST: Is method me data HTTP request ki body ke andar chupkar jata hai, isliye ye URL me nahi dikhta. Ye secure hota hai aur forms ya password submission ke liye best hai. Iski koi fixed data limit nahi hoti aur ye file upload bhi support karta hai."
+},
+{
+  "id": 50,
+  "category": "PHP",
+  "question": "PHP me Sessions aur Cookies me kya difference hai?",
+  "answer": "Cookies: Ye user ke Client-side (yani browser) par store hoti hain. Kyunki ye user ke computer par hoti hain, inhe user dekh bhi sakta hai aur modify (tamper) bhi kar sakta hai, isliye ye kam secure hoti hain.\n\nSessions: Ye Server-side par store hoti hain. PHP har user ke liye ek unique Session ID banata hai aur use browser me cookie ke roop me save kar deta hai. Saara actual data server par safe rehta hai, isliye sessions zyada secure hote hain."
+},
+{
+  "id": 51,
+  "category": "PHP",
+  "question": "PHP me SQL Injection attacks ko kaise rokte hain?",
+  "answer": "User se aaye data ko kabhi bhi directly SQL query ki string me concatenate ( jodhna ) nahi chahiye. SQL Injection se bachne ka sabse best aur modern tareeka hai PDO (PHP Data Objects) ya MySQLi ke saath Prepared Statements ka use karna.\n\nPrepared Statements data aur SQL query ko alag-alag rakhte hain, jisse user input kabhi bhi database me code ki tarah execute nahi ho pata."
+},
+{
+  "id": 52,
+  "category": "PHP",
+  "question": "PHP me include aur require me main difference kya hai?",
+  "answer": "Dono ka basic kaam same hai—kisi doosri PHP file ka code current file me insert karna. Lekin main difference Error Handling me hai:\n\ninclude: Agar specified file nahi milti (missed ya delete ho gayi hai), to ye ek Warning (E_WARNING) deta hai. Lekin aapka script ruka nahi hai—code ka execution aage chalta rehta hai.\n\nrequire: Agar file nahi milti, to ye ek Fatal Error (E_COMPILE_ERROR) throw karta hai. Iske baad script ka execution wahin ruk jata hai (stop ho jata hai) aur aage ka koi code run nahi hota.\n\n\nRule of Thumb: Agar file application ke liye critical hai (jaise database configuration file), to require use karein. Agar sirf footer ya sidebar hai jiske bina bhi site chal sakti hai, to include use karein."
+},
+{
+  "id": 53,
+  "category": "PHP",
+  "question": "include_once aur require_once kya hote hain, aur inhe kab use karna chahiye?",
+  "answer": "_once ka matlab hai ki PHP pehle check karega ki kya wo file pehle se include ho chuki hai ya nahi. Agar ho chuki hai, to wo use dubara include nahi karega.\n\nAgar aap galti se same file ko do baar include ya require kar dete hain, aur us file me koi function ya class defined hai, to PHP 'Fatal error: Cannot redeclare function...' ka error de dega.\n\ninclude_once aur require_once isi error se bachate hain. Inhe tab use karna chahiye jab aap functions, classes, ya global configuration files load kar rahe hon, taaki duplicate loading na ho."
+},
+{
+  "id": 54,
+  "category": "PHP",
+  "question": "Performance ke maamle me require behtar hai ya require_once?",
+  "answer": "Performance ke maamle me require thoda sa faster hota hai compare to require_once.\n\nKyunki require_once ko har baar back-end par ek internal lookup table check karni padti hai ki 'Kya yeh file pehle load hui thi?'. Agar aapka framework ya code structure achha hai aur aapko pata hai ki file dubara load nahi hogi, to simple require use karna zyada efficient hota hai."
+},
+{
+  "id": 55,
+  "category": "React",
+  "question": "React me Component Lifecycle Methods kya hote hain, aur Functional Components me inhe kaise handle kiya jata hai?",
+  "answer": "Class Components me lifecycle methods hote the jo component ke alag-alag stages par run hote hain—jaise birth (Mounting), growth (Updating), aur death (Unmounting).\n\ncomponentDidMount (jab component screen par pehli baar aata hai).\ncomponentDidUpdate (jab state ya props change hote hain).\ncomponentWillUnmount (jab component screen se hatata hai)."
+},
+{
+  "id": 56,
+  "category": "React",
+  "question": "React me Context API kya hai, aur ye Redux se kaise alag hai?",
+  "answer": "Context API: Ye React ka ek built-in feature hai jo hume global data (jaise Themes, User Authentication state) bina 'Props Drilling' (har ek layer se props pass karna) ke deep-nested components tak directly pahunchane me madad karta hai. Ye small to medium apps ke liye best hai.\n\nRedux: Ye ek third-party library hai jo advanced state management ke liye use hoti hai. Redux me ek single global Store hota hai, aur state ko modify karne ke liye Actions aur Reducers ka use hota hai. Redux badhe aur complex applications ke liye behtar hai kyunki ye strict unidirectional data flow aur behtar debugging tools (Redux DevTools) deta hai."
+},
+{
+  "id": 57,
+  "category": "React",
+  "question": "React.memo aur useMemo me kya difference hai?",
+  "answer": "Dono ka kaam application ki performance ko optimize karna hai (unnecessary re-renders ko rok kar), lekin dono ka use-case alag hai:\n\nReact.memo: Ye ek Higher-Order Component (HOC) hai. Ye poore component ko wrap karta hai. Agar component ke props change nahi hue hain, to ye use re-render hone se bacha leta hai.\n\nuseMemo: Ye ek Hook hai. Ye kisi component ke andar kisi heavy ya complex calculation/function ke result ko memoize (cache) karne ke liye use hota hai, taaki wo calculation har render par dubara na chale."
+},
+{
+  "id": 58,
+  "category": "Node Js",
+  "question": "Node.js me Streams aur Buffer me kya difference hai?",
+  "answer": "Dono hi data handling ke tarike hain jab hum badi files ya network requests ke sath kaam karte hain:\n\nBuffer: Ye memory (RAM) me ek temporary storage space hai. Node.js puri file ka data ek sath uthakar buffer me dalta hai aur phir use process karta है. Agar file 2GB ki hai, to ye 2GB RAM consume karega, jo server crash kar sakta hai.\n\nStreams: Ye data ko chhote-chhote pieces (chunks) me process karta hai, bina puri file ko ek sath memory me load kiye. Jaise YouTube par video puri download nahi hoti, chunks me stream hoti hai. Isse memory efficiency bohot badh jaati hai."
+},
+{
+  "id": 59,
+  "category": "Node Js",
+  "question": "Node.js me process.nextTick() aur setImmediate() me kya difference hai?",
+  "answer": "Dono hi asynchronous execution ke liye use hote hain, lekin Event Loop me inka execution order alag hota hai:\n\nprocess.nextTick(): Ye Event Loop ke agle phase par jaane ka wait nahi karta. Current operation khatam hote hi, sabse pehle process.nextTick() ka callback execute hota hai. Iska priority sabse high hota hai.\n\nsetImmediate(): Ye tab execute hota hai jab Event Loop ka current phase (Check phase) poora ho jata hai. Ye regular event loop cycle ke hissab se chalta hai."
+},
+{
+  "id": 60,
+  "category": "Node Js",
+  "question": "Express.js me Middleware kya hota hai, aur iska kya use hai?",
+  "answer": "Middleware ek function hota hai jiske paas Request object (req), Response object (res), aur application ke event loop ke agle middleware function (next) ka access hota\n\nJab bhi koi request client se aati hai aur server response bhejta hai, middleware uske beech (middle) me execute hota hai. Iska use authentication check karne, logs maintain karne, data parsing karne (jaise express.json()), ya errors handle karne ke liye kiya jata hai."
+},
+{
+  "id": 61,
+  "category": "MySQL",
+  "question": "SQL Injection (SQLi) kya hota hai? (What is SQL Injection?)",
+  "answer": "SQL Injection ek aisi web vulnerability (kamzori) hai jahan ek attacker aapke application ke input fields (jaise login form, search box, ya URL query params) me malicious SQL code insert kar deta hai.\n\nAgar aapka backend code us user input ko bina check kiye seedhe database query me jod (concatenate) deta hai, to database us malicious input ko ek valid SQL command samajh kar execute kar deta hai. Isse attacker aapke database ka access pa sakta hai, data chura sakta hai (Data Theft), ya poora data delete kar sakta hai."
+},
+{
+  "id": 62,
+  "category": "MySQL",
+  "question": "SQL Injection ko hum kaise PREVENT (rok) sakte hain? (How to prevent SQL Injection?)",
+  "answer": "SQL Injection se bachne ke 3 sabse best aur foolproof tareeke hain:\n\n1.Prepared Statements and Parameterized Queries (Sabse Best Method)\nYe SQL Injection se bachne ka sabse zaroori aur primary tareeka hai. Isme SQL query ka structure pehle se compile ho jata hai, aur user input ko baad me ek parameter (placeholder) ke roop me bheja jata hai. Database user input ko kabhi bhi executable code nahi maanta, chahe usme koi bhi SQL command likhi ho.\n\n2.Input Validation and Sanitization (Whitelisting)\nUser jo bhi data enter kar raha hai, use accept karne se pehle validate karein.\nAgar kisi field me sirf Number aana chahiye (jaise User ID), to check karein ki wo strictly ek integer ho (PHP me filter_var() ya Node.js me typeof / validator libraries).\nSpecial characters ko remove ya escape karein.\n\n3.ORM (Object Relational Mapping) Tools ka Use karna\nAgar aap modern frameworks use kar rahe hain, to unke built-in ORMs default roop se prepared statements use karte hain, jo aapko SQLi se bachate hain:\nNode.js me: Sequelize, Prisma, ya Mongoose (MongoDB ke liye).\nPHP me: Laravel ka Eloquent ORM."
+},
+{
+  "id": 63,
+  "category": "MySQL",
+  "question": "Kya NoSQL Databases (jaise MongoDB) me bhi Injection hota hai?",
+  "answer": "Haan, NoSQL databases me bhi Injection attacks ho sakte hain, jise NoSQL Injection kehte hain.\n\nHalanki wahan traditional SQL queries (SELECT, WHERE) nahi hoti, lekin agar attacker input me MongoDB ke operators (jaise $gt matlab Greater Than, ya $ne matlab Not Equal) pass kar de, to query ka logic badal sakta hai."
+},
+{
+  "id": 64,
+  "category": "MySQL",
+  "question": "Stored Procedures use karne se kya SQL Injection poori tarah ruk jata hai?",
+  "answer": "Poori tarah nahi. Stored Procedures automatically SQL Injection ko nahi rokte. Agar aap Stored Procedure ke andar bhi queries ko string concatenation se jod rahe hain, to wahan bhi SQL Injection ho sakta hai. Stored Procedure ke andar bhi aapko parameters ka hi use karna chahiye tabhi wo secure hota hai."
+},
+{
+  "id": 65,
+  "category": "Atomic Networking",
+  "question": "What is the difference between a Three-Tier Architecture and a Leaf-Spine Architecture in a Modern Data Centre? Aap apne DC design mein kise prefer karenge?",
+  "answer": "Traditional Three-Tier Architecture mein Core, Distribution, aur Access layers hoti hain. Yeh architecture North-South traffic (traffic entering and leaving the DC) ke liye efficient hota hai.\n\nModern Leaf-Spine Architecture mein sirf do layers hoti hain—Spine (Core) aur Leaf (where servers connect). Yeh East-West traffic (traffic between servers inside the DC) ki latency ko bohot kam kar deta hai kyunki har Leaf switch har Spine switch se directly connected hota hai.\n\nResponse Tip: 'Sir, modern Data Centres mein hum Leaf-Spine Architecture prefer karte hain kyunki aajkal virtualization aur cloud workloads ki wajah se server-to-server traffic zyada hota hai. Isse predictable latency aur scale-out bandwidth milti hai."
+},
+{
+  "id": 66,
+  "category": "Atomic Networking",
+  "question": "Voice and Video traffic ko network par effectively manage karne ke liye aap kya strategies use karenge?",
+  "answer": "Voice aur Video real-time traffic hain, isliye inme packet drop aur jitter nahi hona chahiye.\n\nVLAN Segregation: Voice aur Video ke liye dedicated, alag VLANs (e.g., Voice VLAN) banayenge taaki normal data traffic unhe disturb na kare.\n\nQoS (Quality of Service): Switches aur routers par QoS configure karenge. Voice traffic ko EF (Expedited Forwarding) queue allot karenge aur video traffic ko high-priority queue (CoS 5 or DSCP AF41) denge.\n\nBandwidth Reservation: LLQ (Low Latency Queuing) configure karenge taaki network congestion ke time par bhi critical communication block na ho."
+},
+{
+  "id": 67,
+  "category": "Atomic Networking",
+  "question": "OCan you explain your approach towards designing an OFC Link and creating a Termination Plan?",
+  "answer": "Design Phase: Sabse pehle distance aur bandwidth requirements ke basis par Single-Mode (SM) ya Multi-Mode (MM) fiber select karte hain. (Long-distance backhaul ke liye SM, aur campus/DC internal connections ke liye OM3/OM4 MM fiber). Iske baad ek Link Budget Calculation kiya jata hai, jisme saare connectors, splices, aur cable inherent attenuation ka max allowable loss calculate kiya jata hai.\n\nTermination Plan: Isme hum define karte hain ki kaun sa fiber strand kis LIU (Lightwave Interface Unit) ke kis port par terminate hoga. Iske liye hum TIA-598-C Color Coding Standard (Blue, Orange, Green, Brown...) follow karte hain taaki document clear ho aur future troubleshooting aasan ho."
+},
+{
+  "id": 68,
+  "category": "Atomic Networking",
+  "question": "OFC testing karte waqt Insertion Loss Testing (LSPM) aur OTDR Testing mein kya difference hai?",
+  "answer": "LSPM (Light Source & Power Meter): Yeh test link ka total end-to-end loss (attenuation) measure karta hai. Yeh yeh confirm karne ke liye best hai ki link overall benchmark meet kar raha hai ya nahi (Pass/Fail check).\n\nOTDR (Optical Time Domain Reflectometer): Yeh fiber ke andar light pulses bhejkar ek graphical trace report banata hai. Yeh end-to-end loss ke sath-sath exact location batata hai ki kis splice par loss hai, fiber kahan se excessively bent hai, ya kahan se break hai.\n\nResponse Tip: 'Sir, LSPM hume final attenuation figure deta hai, par agar link mein koi fault ho, toh exact distance aur defect spot karne ke liye hum OTDR test use karte hain.'"
+},
+{
+  "id": 69,
+  "category": "Atomic Networking",
+  "question": "CCTV Cameras aur Sensors ko Perimeter Surveillance ke liye integrate karte waqt network bandwidth aur storage ko kaise optimize karenge?",
+  "answer": "H.265/H.265+ Compression: Codec level par H.264 ke bajay latest compression standards use karenge, jo storage aur bandwidth ko up to 50% tak reduce kar deta hai.\n\nEdge Analytics & Motion-Based Recording: Continuous 24/7 high-definition recording ki jagah standalone perimeter sensors (like RADAR or Laser curtains) aur camera video analytics ka integration karenge. Normal time par standard frame-rate capture hoga, par jaise hi perimeter fence block ya alert trigger hoga, camera automatically high-resolution stream trigger kar dega.\n\nMulticast Streaming: Live monitoring stations ke liye core network par unicast streams ki jagah Multicast (IGMP) use karenge, taaki multiple screens par feed chalne se network choke na ho."
+},
+{
+  "id": 70,
+  "category": "Atomic Networking",
+  "question": "What is the role of a Video Matrix and Video Processor in a Network Operations Centre (NOC) or Command Centre?",
+  "answer": "Video Matrix: Yeh ek hardware crossbar switch hai jo multiple inputs (like server dashboards, CCTV feeds, PC displays) ka video signal multiple destination outputs (Video wall displays) par bina kisi signal degradation ke route karta hai.\n\nVideo Processor/Controller: Yeh device outputs ko manage aur manipuate karne ke kaam aata hai. Yeh single screens ko combile karke ek large canvas banata hai aur aapko customizable layouts, window scaling, picture-in-picture (PiP), aur scrolling tickers configuration ki capability deta hai.\n\nNetworking aspect: Ek AM (Networking) ke roop mein, main ensure karunga ki AV-over-IP streams switch hote waqt dedicated non-blocking IGMP snooping enabled switches par ho, kyunki uncompressed high-res video heavy bandwidth consume karti hai."
+},
+{
+  "id": 71,
+  "category": "Atomic Networking",
+  "question": "As a certified professional (CCNP/CDCP), how do you ensure High Availability (HA) in a Data Centre Network Architecture?",
+  "answer": "Device Level: Dual Power Supplies implementation (A-feed and B-feed from separate UPS sources) aur redundant supervisor engines use karenge switches mein.\n\nLink & Topology Level: Link level redundancy ke liye LACP / EtherChannel design karenge. Topology loop-prevention aur fast convergence ke liye core layers par Multi-chassis EtherChannel technologies jaise Cisco ka vPC (Virtual Port Channel) ya StackWise-Virtual use karenge.\n\nGateway Layer: Redundant next-hop redundancy ke liye FHRP protocols jaise HSRP / VRRP customize karenge."
 }
 ]
