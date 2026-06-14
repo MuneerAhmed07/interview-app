@@ -562,5 +562,467 @@
   "category": "Network",
   "question": "What is the difference between Interior and Exterior Gateway Protocols?",
   "answer": "Interior Gateway Protocol (IGP):\n\u2022 Ek Autonomous System ke andar routing ke liye use hota hai\n\u2022 Enterprise networks mein common hai\n\u2022 Examples: OSPF, EIGRP, IS-IS\n\u2022 Faster convergence\n\n\nExterior Gateway Protocol (EGP):\n\u2022 Different Autonomous Systems ke darmiyan use hota hai\n\u2022 ISPs aur internet routing mein common hai\n\u2022 Example: BGP\n\u2022 Highly scalable but slower convergence"
+},
+{
+  "id": 95,
+  "category": "Network",
+  "question": "What is the difference between a hub, switch, and router?",
+  "answer": "ye teeno networking devices hain lekin inka kaam different hota hai.\n\nDevice:\n\u2022 Hub: Data ko blindly sab ports par broadcast karta hai\n\u2022 Switch: MAC address ke basis par data forward karta hai\n\u2022 Router: Different networks ke beech data route karta hai (IP based)\n\nSimple Explanation:\n\u2022 Hub: Dumb device hai, sab ko data bhej deta hai\n\u2022 Switch: Intelligent device hai, correct device ko data send karta hai\n\u2022 Router: Different networks ko connect karta hai (Internet example)"
+},
+{
+  "id": 96,
+  "category": "Network",
+  "question": "What is a MAC address?",
+  "answer": "MAC ka full form Media Access Control address hai.\n\nYe ek unique physical address hota hai jo network interface card (NIC) ko manufacturer deta hai.\n\u2022 48-bit address hota hai\n\u2022 Hexadecimal format mein hota hai\n\u2022 Example: 00:1A:2B:3C:4D:5E\n\nSimple words mein:\nMAC address device ka permanent hardware identity hota hai."
+},
+{
+  "id": 97,
+  "category": "Network",
+  "question": "How does a switch learn MAC addresses?",
+  "answer": "Switch self-learning process use karta hai.\n\nProcess:\n\u2022 Jab koi frame switch ko milta hai\n\u2022 Switch source MAC address read karta hai\n\u2022 Us MAC ko apni MAC address table mein store kar leta hai\n\u2022 Future mein agar same MAC aaye to switch directly correct port par forward karta hai\n\nIs process ko MAC learning kehte hain."
+},
+{
+  "id": 98,
+  "category": "Network",
+  "question": "What is MAC address table?",
+  "answer": "MAC Address Table ko CAM table (Content Addressable Memory) bhi kehte hain.\n\nIs table mein:\n\u2022 MAC address\n\u2022 Associated switch port\n\u2022 VLAN information\nstore hoti hai.\n\nSwitch isi table ka use karke decide karta hai ke frame kis port par forward karna hai.\n\nExample: \nMAC Address \n\u2022 AA:BB:CC:01\n\u2022 DD:EE:FF:02\n\nPort: \n\u2022 Fa0/1\n\u2022 Fa0/2"
+},
+{
+  "id": 99,
+  "category": "Network",
+  "question": "What is a VLAN and why is it used?",
+  "answer": "VLAN ka full form Virtual Local Area Network hai.\n\nVLAN ek logical segmentation technique hai jisme ek physical network ko multiple logical networks mein divide kiya jata hai.\n\nWhy VLAN is used:\n\u2022 Security improve hoti hai\n\u2022 Broadcast traffic reduce hota hai\n\u2022 Network performance better hoti hai\n\u2022 Departments alag-alag segregate ho jate hain\n\nExample: \n\u2022 HR VLAN\n\u2022 IT VLAN\n\u2022 Finance VLAN"
+},
+{
+  "id": 100,
+  "category": "Network",
+  "question": "What are access and trunk ports?",
+  "answer": "Access Port:\n\u2022 Sirf ek VLAN ko carry karta hai\n\u2022 End devices (PC, printer) ke liye use hota hai\n\nExample:\nPC → Switch port (VLAN 10 only)\n\nTrunk Port:\n\u2022 Multiple VLANs carry karta hai\n\u2022 Switch-to-switch ya switch-to-router connection mein use hota hai"
+},
+{
+  "id": 101,
+  "category": "Network",
+  "question": "What is IEEE 802.1Q?",
+  "answer": "IEEE 802.1Q ek VLAN tagging standard hai.\n\nIska kaam hai:\n\u2022 Ethernet frames mein VLAN ID add karna\n\u2022 Trunk links par multiple VLAN traffic differentiate karna\n\nSimple words:\n802.1Q ensures ke different VLANs ka traffic mix na ho aur sahi identify ho."
+},
+{
+  "id": 102,
+  "category": "Network",
+  "question": "What is inter-VLAN routing?",
+  "answer": "Inter-VLAN routing ka matlab hai different VLANs ke darmiyan communication enable karna.\n\nNormally VLANs isolated hoti hain, lekin routing ke through communication possible hota hai.\n\nMethods:\n\u2022 Router-on-a-stick\n\u2022 Layer 3 switch\n\nExample:\nVLAN 10 (HR) ko VLAN 20 (IT) se communicate karwana."
+},
+{
+  "id": 103,
+  "category": "Network",
+  "question": "Difference between Layer 2 and Layer 3 Switch",
+  "answer": "Layer 2 Switch:\n\u2022 MAC address par switching karta hai\n\u2022 Same VLAN ke andar communication\n\u2022 Fast switching\n\nLayer 3 Switch:\n\u2022 IP address par routing bhi karta hai\n\u2022 Inter-VLAN routing support karta hai\n\u2022 Routing + switching dono\n\nSimple:\n\u2022 L2 switch = Data link layer device\n\u2022 L3 switch = Switch + Router combined"
+},
+{
+  "id": 104,
+  "category": "Network",
+  "question": "What causes switching loops?",
+  "answer": "Switching loops tab hoti hain jab redundant paths network mein exist karte hain aur proper loop prevention nahi hota.\n\nCauses:\n\u2022 Multiple active paths between switches\n\u2022 No STP (Spanning Tree Protocol)\n\u2022 Incorrect cabling\n\nProblems caused:\n\u2022 Broadcast storm\n\u2022 MAC table instability\n\u2022 Network slow or crash\n\nSolution:\n\u2022 STP (Spanning Tree Protocol) loop ko prevent karta hai by blocking redundant links."
+},
+{
+  "id": 105,
+  "category": "Network",
+  "question": "Agar VLAN 10 aur VLAN 20 communicate nahi kar rahe to kya check karoge?\n\nSwitch loop kaise detect aur fix karoge?",
+  "answer": "Strong answer ke liye bolain:\n\u2022 VLAN configuration check\n\u2022 Trunk link status\n\u2022 Inter-VLAN routing enable hai ya nahi\n\u2022 STP status verify"
+},
+{
+  "id": 106,
+  "category": "Network",
+  "question": "What is STP and why is it necessary?",
+  "answer": "STP ka full form Spanning Tree Protocol hai. Yeh ek Layer 2 protocol hai jo switched networks mein switching loops ko prevent karne ke liye use hota hai.\n\nJab network mein redundancy ke liye multiple paths hote hain, to frames continuously circulate kar sakte hain, jis se broadcast storms, MAC address table instability, aur network failure ho sakta hai.\n\nSTP redundant links ko identify karta hai aur unnecessary paths ko blocking state mein rakh kar ek loop-free topology create karta hai.\n\nSimple Example:\nAgar do switches ke darmiyan do cables lagi hon, to STP ek link ko active rakhega aur doosre ko block kar dega. Agar active link fail ho jaye, to blocked link automatically active ho sakta hai."
+},
+{
+  "id": 107,
+  "category": "Network",
+  "question": "How does STP elect the Root Bridge?",
+  "answer": "STP mein ek switch ko Root Bridge select kiya jata hai jo poore spanning tree ka central reference point hota hai.\n\nRoot Bridge election Bridge ID (BID) ke basis par hoti hai.\n\nBridge ID ke do components hote hain:\n\u2022 Bridge Priority\n\u2022 MAC Address\n\nElection process:\n\u2022 Sab switches BPDU messages exchange karte hain.\n\u2022 Jis switch ka lowest Bridge Priority hota hai woh Root Bridge ban jata hai.\n\u2022 Agar priority same ho, to lowest MAC Address wala switch Root Bridge select hota hai.\nBy default, Cisco switches ki priority 32768 hoti hai."
+},
+{
+  "id": 108,
+  "category": "Network",
+  "question": "Can you explain STP port states?",
+  "answer": "Traditional STP mein 5 port states hoti hain:\n\nPorts: \n\nBlocking: Frames forward nahi karta, sirf BPDU receive karta hai\nListening: Network topology ko process karta hai, MAC addresses learn nahi karta\nLearning: MAC address table ko learn karta hai, lekin data forward nahi karta\nForwarding: Normal traffic send aur receive karta hai\nDisabled: Port administratively down hota hai\n\nSimple Flow:\nBlocking → Listening → Learning → Forwarding"
+},
+{
+  "id": 109,
+  "category": "Network",
+  "question": "What is the difference between STP, RSTP, and MSTP?",
+  "answer": "STP:\n\u2022 Spanning Tree Protocol\n\u2022 IEEE 802.1D\n\u2022 Slow (30-50 sec)\n\u2022 One STP instance\n\u2022 Limited \n\u2022 Small networks\n\nRSTP:\n\u2022 Rapid Spanning Tree Protocol\n\u2022 IEEE 802.1w\n\u2022 Fast (1-6 sec)\n\u2022 One RSTP instance\n\u2022 Better than STP \n\u2022 Medium networks\n\nMSTP: \n\u2022 Multiple Spanning Tree Protocol\n\u2022 IEEE 802.1s\n\u2022 Fast\n\u2022 Multiple instances\n\u2022 Supports multiple VLAN groups\n\u2022 Large enterprise networks\n\nSummary:\n\u2022 STP → Basic loop prevention\n\u2022 RSTP → Faster recovery after a topology change\n\u2022 MSTP → Multiple VLANs ko different spanning-tree instances mein manage karta hai"
+},
+{
+  "id": 110,
+  "category": "Network",
+  "question": "What is PortFast and when should it be enabled?",
+  "answer": "PortFast ek STP feature hai jo access ports ko directly Forwarding state mein le jata hai bina Listening aur Learning states ka wait kiye.\n\nBenefits:\n\u2022 Devices quickly network se connect ho jate hain.\n\u2022 PC boot hone ke baad immediately network access mil jata hai.\n\u2022 DHCP delays ko avoid karta hai.\n\nWhen should it be enabled?\nPortFast sirf access ports par enable karna chahiye jahan end devices jaise:\n\u2022 PCs\n\u2022 Printers\n\u2022 IP Phones\nconnect hote hain.\n\nImportant Interview Point:\nPortFast ko switch-to-switch trunk ports par enable nahi karna chahiye, kyun ke is se switching loops ka risk barh sakta hai."
+},
+{
+  "id": 111,
+  "category": "Network",
+  "question": "What is BPDU Guard?",
+  "answer": "BPDU Guard ek security feature hai jo PortFast enabled ports ko protect karta hai.\n\nNormally access ports par BPDU messages nahi aane chahiye. Agar kisi PortFast port par BPDU receive hota hai, to BPDU Guard us port ko err-disabled state mein daal deta hai.\n\nIska purpose hai:\n\u2022 Unauthorized switch connections ko prevent karna\n\u2022 Accidental switching loops ko avoid karna\n\u2022 STP topology ko secure rakhna"
+},
+{
+  "id": 112,
+  "category": "Network",
+  "question": "Agar ek user ka PC connect karne ke baad 30 seconds tak network nahi mil raha, aap kya check karenge?",
+  "answer": "Sir, main check karunga ke us access port par PortFast enable hai ya nahi, kyun ke normal STP Listening aur Learning states ki wajah se delay aa sakta hai."
+},
+{
+  "id": 113,
+  "category": "Network",
+  "question": "Agar do switches ke darmiyan loop create ho jaye to kya hoga?",
+  "answer": "Sir, broadcast storm, MAC table instability aur high CPU utilization ho sakta hai. STP redundant links ko block karke loop ko prevent karta hai."
+},
+{
+  "id": 114,
+  "category": "Network",
+  "question": "Can you explain the TCP three-way handshake?",
+  "answer": "Yes Sir. TCP three-way handshake ek process hai jo TCP connection establish karne ke liye use hota hai. Iska purpose hai ensure karna ke client aur server dono communication ke liye ready hain.\n\nIs process mein 3 steps hote hain:\n\nStep 1: SYN (Synchronize)\n\u2022 Client server ko SYN packet send karta hai.\n\u2022 Yeh indicate karta hai ke client connection establish karna chahta hai.\n\u2022 Client apna initial sequence number (ISN) send karta hai.\n\nStep 2: SYN-ACK (Synchronize Acknowledge):\n\u2022 Server client ke SYN request ko receive karta hai.\n\u2022 Server client ko SYN + ACK packet send karta hai.\n\u2022 Ismein server apna ISN bhejta hai aur client ke SYN ko acknowledge karta hai.\n\nStep 3: ACK (Acknowledgement):\n\u2022 Client server ko ACK packet send karta hai.\n\u2022 Iske baad TCP connection successfully establish ho jata hai aur data transfer start ho sakta hai.\n\nSimple Flow:\n\u2022 Client → SYN → Server\n\u2022 Server → SYN-ACK → Client\n\u2022 Client → ACK → Server\n\nEasy way to remember:\n\u2022 Client: “Can we talk?” (SYN)\n\u2022 Server: “Yes, I am ready.” (SYN-ACK)\n\u2022 Client: “Okay, let's start.” (ACK)"
+},
+{
+  "id": 115,
+  "category": "Network",
+  "question": "How does TCP terminate a connection?",
+  "answer": "TCP connection ko close karne ke liye four-way handshake use hota hai.\n\nStep 1: FIN\n\u2022 Jo device connection close karna chahta hai, woh FIN packet send karta hai.\n\nStep 2: ACK\n\u2022 Dusri side FIN ko acknowledge karti hai aur ACK packet bhejti hai.\n\nStep 3: FIN\n\u2022 Jab dusri side apna communication complete kar leti hai, to woh bhi FIN packet send karti hai.\n\nStep 4: ACK\n\u2022 Pehli side final ACK send karti hai aur connection close ho jata hai.\n\n\nSimple Flow:\n\u2022 Client → FIN → Server\n\u2022 Server → ACK → Client\n\u2022 Server → FIN → Client\n\u2022 Client → ACK → Server"
+},
+{
+  "id": 116,
+  "category": "Network",
+  "question": "What is the difference between TCP and UDP?",
+  "answer": "TCP:\n\u2022 Full Form: Transmission Control Protocol\n\u2022 Connection: Connection-oriented\n\u2022 Reliability: Reliable\n\u2022 Acknowledgement: Uses ACK\n\u2022 Error Recovery: Yes\n\u2022 Speed: Slower\n\u2022 Data Order: Maintains sequence\n\u2022 Overhead: More\n\u2022 Examples: HTTP, HTTPS, FTP, SMTP\n\nUDP:\n\u2022 Full Form: User Datagram Protocol\n\u2022 Connection: Connectionless\n\u2022 Reliability: Unreliable\n\u2022 Acknowledgement: No ACK\n\u2022 Error Recovery: No\n\u2022 Speed: Faster\n\u2022 Data Order: No guarantee of order\n\u2022 Overhead: Less\n\u2022 Examples: DNS, VoIP, Gaming, Streaming\n\nSimple Explanation:\nTCP ek registered courier service ki tarah hai jo delivery confirmation deta hai.\nUDP ek normal letter ki tarah hai jo fast bhej diya jata hai lekin delivery confirmation nahi hoti."
+},
+{
+  "id": 117,
+  "category": "Network",
+  "question": "What is a SYN flood attack?",
+  "answer": "SYN flood ek Denial-of-Service (DoS) attack hai jo TCP three-way handshake ko exploit karta hai.\n\nAttack process:\n\u2022 Attacker server ko bahut saare fake SYN packets send karta hai.\n\u2022 Server har SYN ke liye SYN-ACK response bhejta hai aur connection resources reserve karta hai.\n\u2022 Attacker final ACK send nahi karta.\n\u2022 Server ke half-open connections bhar jate hain aur legitimate users ko service deny ho sakti hai.\n\nPrevention Methods:\n\u2022 SYN Cookies enable karna\n\u2022 Firewall filtering\n\u2022 Rate limiting\n\u2022 Intrusion Prevention Systems (IPS)"
+},
+{
+  "id": 118,
+  "category": "Network",
+  "question": "Can you tell me some common port numbers?",
+  "answer": "Sir, port numbers network services ko identify karne ke liye use hote hain.\n\nService: \n\u2022 HTTP: 80: TCP\n\u2022 HTTPS: 443 : TCP\n\u2022 SSH : 22 : TCP\n\u2022 FTP : 21 : TCP\n\u2022 DNS : 53 : TCP/UDP\n\u2022 DHCP Server : 67 : UDP\n\u2022 DHCP Client : 68 : UDP\n\u2022 SMTP : 25 : TCP\n\nInterview Tip:\nAksar panel directly poochta hai: “DNS ka port kya hai?” ya “HTTPS kis port par chalta hai?” Isliye yeh ports hamesha yaad honi chahiye." 
+},
+{
+  "id": 119,
+  "category": "Network",
+  "question": "Explain how DNS works?",
+  "answer": "DNS ka full form Domain Name System hai.\n\nDNS ka kaam human-readable domain names ko IP addresses mein convert karna hai.\n\nExample:\n\nUser browser mein www.example.com type karta hai, lekin computer ko communication ke liye IP address chahiye hota hai.\n\nDNS Resolution Process:\n\u2022 User DNS query send karta hai.\n\u2022 Local DNS resolver check karta hai ke answer cache mein available hai ya nahi.\n\u2022 Agar nahi milta to DNS hierarchy se query ki jati hai.\n\u2022 DNS server domain ka corresponding IP address return karta hai.\n\u2022 Browser us IP address ke sath website se connect kar leta hai.\n\nSimple Example:\nDNS internet ki phone book ki tarah kaam karta hai.\n\u2022 Name → Domain Name\n\u2022 Phone Number → IP Address"
+},
+{
+  "id": 120,
+  "category": "Network",
+  "question": "How does DHCP assign IP addresses?",
+  "answer": "DHCP ka full form Dynamic Host Configuration Protocol hai.\n\nDHCP automatically devices ko:\n\u2022 IP Address\n\u2022 Subnet Mask\n\u2022 Default Gateway\n\u2022 DNS Server\nassign karta hai.\n\nDHCP assignment process ko DORA process kehte hain.\n\nD - Discover\n\u2022 Client network mein DHCP Discover message broadcast karta hai aur DHCP server ko search karta hai.\n\nO - Offer\n\u2022 DHCP server available IP address offer karta hai.\n\nR - Request\n\u2022 Client offered IP address ko request karta hai.\n\nA - Acknowledgement\n\u2022 DHCP server ACK send karta hai aur IP lease assign kar deta hai.\n\nSimple Flow:\n\u2022 Client → Discover → DHCP Server\n\u2022 Server → Offer → Client\n\u2022 Client → Request → Server\n\u2022 Server → ACK → Client\n\nRemember: DORA = Discover, Offer, Request, Acknowledge"
+},
+{
+  "id": 121,
+  "category": "Network",
+  "question": "User website access nahi kar pa raha. Aap kya check karenge?",
+  "answer": "Sir, main pehle network connectivity check karunga using ping, phir DNS resolution verify karunga, IP configuration check karunga, gateway reachability test karunga, aur required ports ya firewall rules verify karunga."
+},
+{
+  "id": 122,
+  "category": "Network",
+  "question": "Can you explain the CIA Triad?",
+  "answer": "Yes Sir. CIA Triad information security ka fundamental model hai jo Confidentiality, Integrity, aur Availability ke principles par based hai.\n\n1. Confidentiality (Raazdari)\n\u2022 Iska purpose information ko unauthorized users se protect karna hai.\n\u2022 Sirf authorized users hi data ko access kar sakte hain.\n\nExamples:\n\u2022 Encryption\n\u2022 User authentication\n\u2022 Access control\n\n2. Integrity (Data ki Accuracy)\n\u2022 Ensure karta hai ke data unauthorized tareeqe se modify na ho.\n\u2022 Data accurate aur trustworthy rahe.\n\nExample: \n\u2022 Hashing\n\u2022 Digital signatures\n\u2022 File integrity monitoring\n\n3. Availability (Data ki Availability)\n\u2022 Ensure karta hai ke systems aur data authorized users ke liye required time par available hon.\nExamples:\n\u2022 Backup systems\n\u2022 Redundant links\n\u2022 Disaster recovery plans"
+},
+{
+  "id": 123,
+  "category": "Network",
+  "question": "What is the difference between a traditional firewall and a Next-Generation Firewall (NGFW)?",
+  "answer": "Traditional Firewall:\n\u2022 Filters traffic based on IP addresses, ports, and protocols\n\u2022 Provides basic access control\n\u2022 Limited threat detection\n\u2022 Mainly Layer 3 and Layer 4 filtering\n\nNGFW (Next Generation Firewall): \n\u2022 Performs deep packet inspection and application awareness\n\u2022 Provides advanced security features\n\u2022 Detects advanced malware and attacks\n\u2022 Layer 3-7 visibility and control\n\n\nNGFW Features:\n\u2022 Application awareness\n\u2022 Intrusion Prevention System (IPS)\n\u2022 User identity awareness\n\u2022 Malware detection\n\u2022 SSL/TLS inspection"
+},
+{
+  "id": 124,
+  "category": "Network",
+  "question": "What is a Stateful Firewall?",
+  "answer": "Stateful firewall network connections ki state (status) ko track karta hai.\n\nYeh ek state table maintain karta hai jisme active connections ki information store hoti hai.\n\nExample:\n\u2022 Agar internal user ne ek HTTP request send ki hai, to firewall us connection ko remember karta hai aur sirf usi session ka response traffic allow karta hai.\n\nBenefits:\n\u2022 Better security\n\u2022 Efficient traffic filtering\n\u2022 Unwanted traffic ko block karna"
+},
+{
+  "id": 125,
+  "category": "Network",
+  "question": "What is a DMZ and why is it important?",
+  "answer": "DMZ ka full form Demilitarized Zone hai.\n\nYeh ek separate network segment hota hai jo internal network aur internet ke darmiyan place kiya jata hai.\n\nDMZ mein generally public-facing servers rakhe jate hain:\n\u2022 Web Servers\n\u2022 Email Servers\n\u2022 DNS Servers\n\nImportance:\n\u2022 Internal network ko direct internet exposure se bachata hai.\n\u2022 Agar DMZ server compromise ho jaye to attacker directly internal network tak nahi pohanch sakta.\n\u2022 Security ka extra layer provide karta hai."
+},
+{
+  "id": 126,
+  "category": "Network",
+  "question": "Explain NAT and its purpose.",
+  "answer": "NAT ka full form Network Address Translation hai.\n\nNAT private IP addresses ko public IP addresses mein convert karta hai taake internal devices internet access kar saken.\n\nNAT ke Benefits:\n\u2022 Public IPv4 addresses ki saving hoti hai.\n\u2022 Internal IP addresses hide hote hain.\n\u2022 Basic level ki security milti hai.\n\nCommon Types of NAT:\n\u2022 Static NAT: One-to-one mapping.\n\u2022 Dynamic NAT: Pool of public IPs use karta hai.\n\u2022 PAT (Port Address Translation): Multiple private devices ko ek public IP ke through internet access deta hai."
+},
+{
+  "id": 127,
+  "category": "Network",
+  "question": "What are ACLs and their types?",
+  "answer": "ACL ka full form Access Control List hai.\n\nACL rules ka collection hota hai jo decide karta hai ke kaunsa traffic allow ya deny hoga.\n\nTypes of ACLs:\nStandard ACL:\n\u2022 Sirf source IP address ko check karta hai.\n\u2022 Simple filtering ke liye use hota hai.\n\nExtended ACL:\n\u2022 Source IP\n\u2022 Destination IP\n\u2022 Protocol (TCP/UDP/ICMP)\n\u2022 Port numbers\nsab ko check kar sakta hai.\n\nExample:\n\u2022 HTTP (Port 80) allow karna.\n\u2022 SSH (Port 22) sirf specific network ke liye allow karna."
+},
+{
+  "id": 128,
+  "category": "Network",
+  "question": "Explain IDS and IPS.",
+  "answer": "IDS (Intrusion Detection System):\n\u2022 Suspicious activity ko detect karta hai\n\u2022 Network traffic monitor karta hai\n\u2022 Alert generate karta hai\n\u2022 Passive system hai\n\nIPS (Intrusion Prevention System)\n\u2022 Attacks ko detect karke block bhi karta hai\n\u2022 Inline traffic inspect karta hai\n\u2022 Malicious packets drop kar sakta hai\n\u2022 Active security system hai\n\nSimple words:\n\u2022 IDS = Alarm system (detect only)\n\u2022 IPS = Security guard (detect + stop)"
+},
+{
+  "id": 129,
+  "category": "Network",
+  "question": "What is the difference between symmetric and asymmetric encryption?",
+  "answer": "Symmetric Encryption\n\u2022 Same key encryption aur decryption ke liye use hoti hai\n\u2022 Faster hoti hai\n\u2022 Large data encryption ke liye suitable\n\n Asymmetric Encryption:\n\u2022 Public aur Private key pair use hota hai\n\u2022 Comparatively slower hoti hai\n\u2022 Key exchange aur digital signatures ke liye suitable"
+},
+{
+  "id": 130,
+  "category": "Network",
+  "question": "Can you explain IPsec VPN?",
+  "answer": "IPsec ka full form Internet Protocol Security hai.\n\nIPsec VPN ek secure communication technology hai jo IP packets ko encrypt aur authenticate karke internet ke upar secure tunnel create karta hai.\n\nIPsec ke Main Features:\n\u2022 Confidentiality → Encryption\n\u2022 Integrity → Hashing\n\u2022 Authentication → Verify communication parties\n\nCommon Uses:\n\u2022 Site-to-Site VPN\n\u2022 Remote Access VPN"
+},
+{
+  "id": 131,
+  "category": "Network",
+  "question": "What is the difference between AH and ESP in IPsec?",
+  "answer": "AH (Authentication Header)\n\u2022 Authentication provide karta hai\n\u2022 Data integrity verify karta hai\n\u2022 Confidentiality provide nahi karta\n\u2022 NAT ke sath issues aa sakte hain\n\nESP (Encapsulating Security Payload)\n\u2022 Authentication + Encryption provide karta hai\n\u2022 Data ko encrypt bhi karta hai\n\u2022 Confidentiality provide karta hai\n\u2022 NAT-T ke sath commonly use hota hai\n\nInterview Point:\nAaj kal practical networks mein ESP zyada use hota hai kyun ke yeh encryption provide karta hai."
+},
+{
+  "id": 132,
+  "category": "Network",
+  "question": "Can you name some common network attacks?",
+  "answer": "Common attacks include:\n\n1. DDoS (Distributed Denial of Service)\n\u2022 Multiple systems se excessive traffic bhej kar service ko unavailable karna.\n\n2. Man-in-the-Middle (MITM)\n\u2022 Attacker communication ke beech mein aa kar data intercept karta hai.\n\n3. Phishing\n\u2022 Fake emails ya websites ke through credentials steal karna.\n\u2022 4. Malware/Ransomware\n\u2022 Malicious software jo data damage ya encrypt kar sakta hai.\n\n5. ARP Spoofing\n\u2022 Fake ARP messages bhej kar network traffic ko divert karna.\n\n6. Password Attacks\n\u2022 Brute force aur credential guessing attacks."
+},
+{
+  "id": 133,
+  "category": "Network",
+  "question": "How can you protect a network from DDoS attacks?",
+  "answer": "DDoS protection ke liye multiple security controls use kiye jate hain:\n\nPreventive Measures:\n\u2022 Firewall aur DDoS protection systems deploy karna.\n\u2022 Rate limiting configure karna.\n\u2022 Intrusion Prevention System (IPS) use karna.\n\u2022 Traffic filtering aur ACLs implement karna.\n\u2022 Load balancers aur redundant infrastructure use karna.\n\u2022 CDN aur cloud-based DDoS mitigation services use karna.\n\u2022 Network monitoring aur anomaly detection enable karna.\n\nIncident Response:\n\u2022 Attack traffic ko identify karke block karna.\n\u2022 ISP ke sath coordinate karna.\n\u2022 Services ko alternate infrastructure par shift karna."
+},
+{
+  "id": 134,
+  "category": "Network",
+  "question": "Agar company ka web server internet se accessible hona chahiye lekin internal network ko secure rakhna hai, aap kya design suggest karenge?",
+  "answer": "Sir, main web server ko DMZ network mein place karunga, firewall policies ke through sirf required ports (jaise HTTP/HTTPS) allow karunga, internal network ke liye strict ACLs implement karunga, aur IDS/IPS monitoring enable karunga."
+},
+{
+  "id": 135,
+  "category": "Network",
+  "question": "What is the difference between 2.4 GHz and 5 GHz Wi-Fi?",
+  "answer": "Yes Sir. 2.4 GHz aur 5 GHz Wi-Fi dono wireless frequency bands hain, lekin inki range, speed aur interference mein difference hota hai.\n\n2.4 GHz Wi-Fi\n\u2022 Zyada range provide karta hai\n\u2022 Speed comparatively kam hoti hai\n\u2022 Walls aur obstacles ko behtar penetrate karta hai\n\u2022 Zyada interference hoti hai (Bluetooth, microwave, other devices)\n\u2022 Kam available channels\n\n5 GHz Wi-Fi\n\u2022 Kam range provide karta hai\n\u2022 Higher speed provide karta hai\n\u2022 Walls ke through signal jaldi weak ho jata hai\n\u2022 Kam interference hoti hai\n\u2022 Zyada available channels\n\nSimple Explanation:\n\u2022 2.4 GHz = Long distance + lower speed\n\u2022 5 GHz = Short distance + higher speed\n\nExample:\n\u2022 Agar aapko ek bade office mein coverage chahiye to 2.4 GHz useful hai.\n\u2022 Agar high-speed data transfer ya video conferencing chahiye to 5 GHz better choice hai."
+},
+{
+  "id": 136,
+  "category": "Network",
+  "question": "Can you explain WPA2 and WPA3 security?",
+  "answer": "WPA ka full form Wi-Fi Protected Access hai. Yeh wireless networks ko unauthorized access se protect karne ke liye use hota hai.\n\nWPA2:\n\u2022 AES encryption use karta hai.\n\u2022 Long time se wireless security ka standard raha hai.\n\u2022 Personal aur enterprise dono modes available hain.\n\nWPA3:\n\u2022 WPA2 ka advanced version hai.\n\u2022 Stronger encryption aur improved authentication provide karta hai.\n\u2022 Brute-force password attacks ke against better protection provide karta hai.\n\u2022 More secure key exchange mechanism use karta hai.\n\nDifference:\n\nWPA2:\n\u2022 Older standard\n\u2022 AES encryption\n\u2022 Less protection against password guessing\n\nWPA3: \n\u2022 Newer standard\n\u2022 Stronger authentication & improved security\n\u2022 Better protection against brute-force attacks"
+},
+{
+  "id": 137,
+  "category": "Network",
+  "question": "What is an SSID?",
+  "answer": "SSID ka full form Service Set Identifier hai.\n\nYeh Wi-Fi network ka naam hota hai jo users ko available wireless networks ki list mein dikhai deta hai.\n\nExample:\n\u2022 Office_WiFi\n\u2022 Company_Guest\n\u2022 Home_Network\n\nSSID ka use wireless clients ko correct Wi-Fi network identify aur connect karne ke liye kiya jata hai."
+},
+{
+  "id": 138,
+  "category": "Network",
+  "question": "What is the difference between Infrastructure Mode and Ad-Hoc Mode?",
+  "answer": "Infrastructure Mode:\n\u2022 Wireless Access Point (AP) use karta hai\n\u2022 Clients AP ke through communicate karte hain\n\u2022 Large networks ke liye suitable\n\u2022 Better management aur security provide karta hai\n\nAd-Hoc Mode:\n\u2022 Access Point ki zaroorat nahi hoti\n\u2022 Devices directly ek dusre se communicate karte hain\n\u2022 Small temporary connections ke liye suitable\n\u2022 Limited range aur management\n\nExamples:\nInfrastructure Mode:\nOffice Wi-Fi jahan laptops aur mobiles access point ke through internet use karte hain.\n\nAd-Hoc Mode:\nDo laptops directly Wi-Fi ke zariye files share karte hain."
+},
+{
+  "id": 139,
+  "category": "Network",
+  "question": "How do you secure a wireless network?",
+  "answer": "Sir, wireless network security ke liye multiple best practices follow ki jati hain:\n\nSecurity Measures:\n1. Use strong encryption\n\u2022 WPA3 use karein, aur agar available na ho to WPA2-AES use karein.\n\n2. Use strong passwords\n\u2022 Complex aur long Wi-Fi passwords use karein.\n\n3. Change default credentials\n\u2022 Access Point ka default username aur password change karein.\n\n4. Disable unnecessary services\n\u2022 WPS jaise unnecessary features ko disable karein.\n\n5. Use separate guest networks\n\u2022 Visitors ke liye alag guest VLAN ya SSID create karein.\n\n6. Enable network monitoring\n\u2022 Unauthorized devices aur suspicious activities monitor karein.\n\n7. Keep firmware updated\n\u2022 Wireless routers aur access points ka firmware regularly update karein.\n\n8. Use Enterprise Authentication (Large Organizations)\n\u2022 WPA2/WPA3 Enterprise ke sath 802.1X and RADIUS server use karein."
+},
+{
+  "id": 140,
+  "category": "Network",
+  "question": "Office mein users complain kar rahe hain ke Wi-Fi slow hai, aap kya troubleshoot karenge?",
+  "answer": "Sir, main pehle signal strength aur coverage check karunga, phir channel interference analyze karunga, 2.4 GHz se 5 GHz migration ki possibility check karunga, Access Point load verify karunga, firmware updates aur bandwidth utilization analyze karunga."
+},
+{
+  "id": 141,
+  "category": "Network",
+  "question": "A user says that his internet is not working. How will you troubleshoot the issue?",
+  "answer": "Yes Sir. Main troubleshooting ko OSI model approach (bottom to top) ke according perform karunga.\n\nStep 1: Check Physical Layer\n\u2022 Check karunga ke LAN cable properly connected hai ya nahi.\n\u2022 Switch port LED status verify karunga.\n\u2022 Wi-Fi connected hai ya nahi check karunga.\n\nStep 2: Check IP Configuration\nCommand: ipconfig /all\n\nMain verify karunga:\n\u2022 IP Address\n\u2022 Subnet Mask\n\u2022 Default Gateway\n\u2022 DNS Server\n\nAgar IP address 169.254.x.x hai to iska matlab DHCP se IP assign nahi hua.\n\nStep 3: Test Connectivity Using Ping\n\nPing local host: ping 127.0.0.1\n\nPing own IP address: ping <your IP>\n\nPing default gateway: ping <gateway IP>\n\nPing public IP: ping 8.8.8.8\n\nPing domain name: ping google.com\n\nAnalysis:\n\u2022 Gateway ping fail → Local network issue.\n\u2022 8.8.8.8 works but google.com fails → DNS issue.\n\u2022 No IP address → DHCP issue."
+},
+{
+  "id": 142,
+  "category": "Network",
+  "question": "The entire department reports slow network. How will you troubleshoot?",
+  "answer": "Sir, main following checks perform karunga:\n\nCheck Network Utilization\n\u2022 Bandwidth usage monitor karunga.\n\u2022 Kisi user ya application ki high traffic identify karunga.\n\nCheck Interface Errors\nSwitch aur router interfaces check karunga:\n\u2022 CRC errors\n\u2022 Packet drops\n\u2022 Collisions\n\nCheck Duplex and Speed Mismatch\n\u2022 Verify karunga ke dono sides par speed aur duplex settings match kar rahi hain.\n\nCheck Latency:\nTools:\n\u2022 ping \n\u2022 Traceroute\n\nCheck Network Devices\n\u2022 Switch CPU and memory utilization check karunga.\n\u2022 Logs analyze karunga.\n\nCheck Malware or Broadcast Storm\n\u2022 Excessive traffic ya infected device identify karunga."
+},
+{
+  "id": 143,
+  "category": "Network",
+  "question": "Two servers are unable to communicate. How will you troubleshoot?",
+  "answer": "Sir, main systematic approach use karunga:\n\nStep 1: Verify IP Configuration\nCheck:\n\u2022 IP address\n\u2022 Subnet mask\n\u2022 Default gateway\n\nStep 2: Test Connectivity\nUse:\n\u2022 ping\n\nStep 3: Trace the Path\nUse:\n\u2022 tracert (Windows)\n\u2022 traceroute (Linux)\nYeh batata hai ke packet kis hop par fail ho raha hai.\n\nStep 4: Check Firewall and ACLs\nVerify:\n\u2022 Windows/Linux firewall\n\u2022 Router ACLs\n\u2022 Security policies\n\nStep 5: Check Routing\n\u2022 Routing table verify karunga.\n\u2022 Ensure karunga ke destination network ka route available hai.\n\nStep 6: Check Services and Ports\nExample:\n\u2022 Web service → Port 80/443\n\u2022 Database → Specific database port"
+},
+{
+  "id": 144,
+  "category": "Network",
+  "question": "A switch suddenly goes down. What will you check?",
+  "answer": "Sir, main sab se pehle physical checks perform karunga.\n\nPhysical Checks:\n\u2022 Power supply check karunga.\n\u2022 Power LED status verify karunga.\n\u2022 Cables aur uplink connection check karunga.\n\nDevice Checks:\n\u2022 Console access try karunga.\n\u2022 Check karunga ke switch reboot to nahi hua.\n\u2022 CPU aur memory utilization verify karunga.\n\nInterface Checks:\n\u2022 Interface status check karunga.\n\u2022 Errors, packet drops aur link status analyze karunga.\n\nNetwork Checks:\n\u2022 STP issues.\n\u2022 Broadcast storms.\n\u2022 Configuration changes.\n\u2022 Logs and Syslog messages."
+},
+{
+  "id": 145,
+  "category": "Network",
+  "question": "How will you troubleshoot high latency?",
+  "answer": "High latency ke liye main following steps follow karunga:\n\nCheck Delay Using Ping\n\u2022 ping <destination>\nResponse time aur packet loss check karunga.\n\nUse Traceroute\nNetwork path ke har hop ka delay identify karunga.\n\nCheck Bandwidth Usage\n\u2022 Congestion ya heavy downloads identify karunga.\n\nCheck QoS Policies\n\u2022 Ensure karunga ke important traffic (VoIP, video conferencing) ko priority mil rahi hai.\n\nCheck Hardware Issues\n\u2022 High CPU utilization.\n\u2022 Interface errors.\n\u2022 Faulty links."
+},
+{
+  "id": 146,
+  "category": "Network",
+  "question": "What is Ping?",
+  "answer": "Ping ek diagnostic tool hai jo ICMP Echo Request aur Echo Reply use karke connectivity test karta hai.\nUse:\n\u2022 Check whether a device is reachable.\n\u2022 Measure latency.\n\u2022 Detect packet loss."
+},
+{
+  "id": 147,
+  "category": "Network",
+  "question": "What is Traceroute?",
+  "answer": "Traceroute source se destination tak packets ka path show karta hai.\n\nYeh identify karta hai:\n\u2022 Kitne routers (hops) cross hue.\n\u2022 Kis hop par delay ya failure ho raha hai."
+},
+{
+  "id": 148,
+  "category": "Network",
+  "question": "Explain Pathping.",
+  "answer": "Pathping Ping aur Traceroute ka combination hai.\n\nYeh:\n\u2022 Network path show karta hai.\n\u2022 Har hop ka packet loss aur latency calculate karta hai. \nZyada detailed troubleshooting ke liye use hota hai."
+},
+{
+  "id": 149,
+  "category": "Network",
+  "question": "What is Wireshark?",
+  "answer": "Wireshark ek network packet analyzer hai.\nIska use:\n\u2022 Network traffic capture karne.\n\u2022 Protocol analysis.\n\u2022 Troubleshooting.\n\u2022 Security investigation.\n\nExample:\n\u2022 DNS failure.\n\u2022 TCP retransmission.\n\u2022 Slow applications."
+},
+{
+  "id": 150,
+  "category": "Network",
+  "question": "What is SNMP?",
+  "answer": "SNMP ka full form Simple Network Management Protocol hai.\n\nYeh network devices ko monitor aur manage karne ke liye use hota hai.\n\nMonitor:\n\u2022 CPU usage\n\u2022 Memory usage\n\u2022 Interface status\n\u2022 Bandwidth utilization\nComponents:\n\u2022 SNMP Manager\n\u2022 SNMP Agent\n\u2022 MIB (Management Information Base)"
+},
+{
+  "id": 151,
+  "category": "Network",
+  "question": "What is NetFlow?",
+  "answer": "NetFlow ek network monitoring technology hai jo network traffic flows ki information collect karti hai.\n\nUse:\n\u2022 Top bandwidth users identify karna.\n\u2022 Application traffic analyze karna.\n\u2022 Security threats detect karna."
+},
+{
+  "id": 152,
+  "category": "Network",
+  "question": "What is Syslog?",
+  "answer": "Syslog ek standard logging protocol hai jo network devices ke logs ko central server par collect karta hai.\n\nLogs include:\n\u2022 Errors\n\u2022 Warnings\n\u2022 Configuration changes\n\u2022 Security events\nBenefits:\n\u2022 Centralized monitoring\n\u2022 Faster troubleshooting\n\u2022 Security auditing"
+},
+{
+  "id": 153,
+  "category": "Network",
+  "question": "What is QoS and how do you prioritize VoIP traffic?",
+  "answer": "QoS ka full form Quality of Service hai.\n\nQoS network traffic ko classify aur prioritize karta hai taake important applications ko required bandwidth aur low latency mil sake.\n\nVoIP ko prioritize karne ke liye:\n\n1. Traffic Classification\n\u2022 VoIP packets identify kiye jate hain.\n\n2. Marking\n\u2022 Packets ko DSCP values assign ki jati hain.\n\nExample: \n\u2022 VoIP Voice Traffic → DSCP EF (Expedited Forwarding - 46)\n\n3. Queuing\n\u2022 High priority queue assign ki jati hai taake voice packets pehle process hon.\n\n4. Bandwidth Reservation\n\u2022 Voice traffic ke liye required bandwidth reserve ki jati hai.\n\nQoS ka Goal:\n\u2022 Low latency\n\u2022 Low jitter\n\u2022 Minimum packet loss"
+},
+{
+  "id": 154,
+  "category": "Network",
+  "question": "AM Networking Interview Tip:",
+  "answer": "Sir, I will first check the physical layer, then IP configuration, then connectivity, routing, DNS, firewall, and finally application-level issues."
+},
+{
+  "id": 155,
+  "category": "Data Center",
+  "question": "What is a data center?",
+  "answer": "Yes Sir. Data Center ek centralized facility hoti hai jahan servers, storage systems, networking equipment aur applications host ki jati hain.\n\nIska main purpose hota hai:\n\u2022 Data store karna\n\u2022 Applications run karna\n\u2022 Services provide karna (web, email, cloud, etc.)\n\nSimple Example:\nGoogle, Facebook, Amazon ke services jo hum use karte hain wo data centers se run hoti hain."
+},
+{
+  "id": 156,
+  "category": "Data Center",
+  "question": "What are server racks and structured cabling?",
+  "answer": "Server Racks\nServer rack ek metal frame hota hai jisme multiple servers, switches aur storage devices install ki jati hain.\n\nBenefits:\n\u2022 Space saving\n\u2022 Proper cooling airflow\n\u2022 Easy maintenance\n\u2022 Organized hardware management\n\nStructured Cabling\nStructured cabling ek organized cabling system hota hai jo data center ya enterprise network mein use hota hai.\n\nIska purpose:\n\u2022 Standardized wiring system\n\u2022 Easy troubleshooting\n\u2022 Scalability\n\u2022 Reduced downtime\n\nComponents:\n\u2022 Patch panels\n\u2022 Ethernet cables\n\u2022 Fiber optics\n\u2022 Cable trays"
+},
+{
+  "id": 157,
+  "category": "Data Center",
+  "question": "What is redundancy and high availability?",
+  "answer": "Redundancy:\n\nRedundancy ka matlab hota hai backup systems ka hona.\n\nAgar primary system fail ho jaye to backup system automatically kaam kare.\n\nExample:\n\u2022 Multiple routers\n\u2022 Dual power supplies\n\u2022 Backup internet links\n\nHigh Availability (HA):\nHigh Availability ka goal hota hai system ko maximum uptime (99.9% or more) par run karna.\nIsme:\n\u2022 Failover systems\n\u2022 Load balancing\n\u2022 Clustering use hota hai"
+},
+{
+  "id": 158,
+  "category": "Data Center",
+  "question": "What is failover?",
+  "answer": "Failover ek automatic process hai jisme agar primary system fail ho jaye to traffic automatically backup system par shift ho jata hai.\n\nExample:\n\u2022 Primary server down → Backup server automatically active ho jata hai.\nPurpose: \n\u2022 Zero downtime\n\u2022 Continuous service availability"
+},
+{
+  "id": 159,
+  "category": "Data Center",
+  "question": "What is load balancing?",
+  "answer": "Load balancing ek technique hai jisme network traffic ya application requests ko multiple servers ke darmiyan distribute kiya jata hai.\n\nBenefits:\n\u2022 Server overload avoid hota hai\n\u2022 Performance improve hoti hai\n\u2022 High availability ensure hoti hai \n\nLoad Balancer Types:\n\u2022 Hardware Load Balancer\n\u2022 Software Load Balancer\n\nAlgorithms:\n\u2022 Round Robin \n\u2022 Least Connections\n\u2022 IP Hashing"
+},
+{
+  "id": 160,
+  "category": "Data Center",
+  "question": "What is SAN and NAS?",
+  "answer": "SAN (Storage Area Network)\nSAN ek high-speed dedicated storage network hota hai jo block-level storage provide karta hai.\n\nFeatures:\n\u2022 High performance\n\u2022 Used in data centers\n\u2022 Block-level access\nUsed for:\n\u2022 Databases\n\u2022 Critical applications \n\nNAS (Network Attached Storage)\nNAS ek file-level storage system hota hai jo network ke through access hota hai.\nFeatures:\n\u2022 Easy to use\n\u2022 File-level access\n\u2022 Lower cost compared to SAN\n\nUsed for:\n\u2022 File sharing\n\u2022 Backups\n\u2022 Media storage\n\n\nDifference:\n\nSAN\n\u2022 Block-level storage \n\u2022 High performance\n\u2022 Complex setup\n\nNAS\n\u2022 File-level storage\n\u2022 Moderate performance\n\u2022Easy setup"
+},
+{
+  "id": 161,
+  "category": "Data Center",
+  "question": "What is virtualization?",
+  "answer": "Virtualization ek technology hai jisme ek physical machine par multiple virtual machines (VMs) run ki jati hain.\n\nIska purpose:\n\u2022 Hardware utilization improve karna\n\u2022 Cost reduction\n\u2022 Scalability\nExample:\nEk physical server par multiple OS run karna (Windows, Linux, etc.)"
+},
+{
+  "id": 162,
+  "category": "Data Center",
+  "question": "What is a hypervisor?",
+  "answer": "Hypervisor ek software layer hoti hai jo virtual machines ko create aur manage karti hai.\n\nTypes of Hypervisors:\n\nType 1 (Bare Metal)\n\u2022 Direct hardware par run hota hai\n\u2022 High performance\n\u2022 Example: VMware ESXi\n\nType 2 (Hosted)\n\u2022 Operating system ke upar run hota hai\n\u2022 Example: VirtualBox, VMware Workstation"
+},
+{
+  "id": 163, 
+  "category": "Data Center",
+  "question": "What is VMware and Hyper-V?",
+  "answer": "VMware\nVMware ek leading virtualization platform hai jo enterprise environments mein use hota hai.\n\nFeatures:\n\u2022 ESXi hypervisor\n\u2022 vSphere management\n\u2022 High scalability\n\u2022 Advanced networking and storage features\n\nUsed in: \n\u2022 Data centers\n\u2022 Cloud environments\n\n\nHyper-V\nHyper-V Microsoft ka virtualization solution hai.\nFeatures:\n\u2022 Windows Server integrated\n\u2022 Easy management\n\u2022 Supports Windows and Linux VMs\nUsed in:\n\u2022 Microsoft-based enterprise environments" 
+},
+{
+  "id": 164,
+  "category": "Data Center",
+  "question": "Agar data center ka primary server fail ho jaye to services kaise continue rahengi?",
+  "answer": "Sir, main HA architecture implement karunga jisme redundancy, failover clustering aur load balancing configured hoga. Agar primary server fail hota hai to traffic automatically backup server par shift ho jata hai without downtime."
+},
+{
+  "id": 165,
+  "category": "Atomic Ornganization",
+  "question": "What is an air-gapped network?",
+  "answer": "Yes Sir. Air-gapped network ek completely isolated network hota hai jo kisi bhi external network, especially Internet se physically disconnected hota hai.\n\nIska purpose hota hai:\n\u2022 Maximum security ensure karna\n\u2022 Sensitive systems ko external cyber attacks se protect karna \n\u2022 Critical data ko isolated environment mein rakhna\n\nSimple Example:\nDefense, nuclear, aur military systems aksar air-gapped networks use karte hain jahan Internet connectivity bilkul nahi hoti."
+},
+{
+  "id": 166,
+  "category": "Atomic Ornganization",
+  "question": "How do you maintain an isolated (air-gapped) network?",
+  "answer": "Sir, isolated network maintain karne ke liye strict security controls implement kiye jate hain:\n\nKey Measures:\n\u2022 No direct Internet connectivity (physical isolation)\n\u2022 Strict access control policies (RBAC)\n\u2022 Separate network zones (segmentation)\n\u2022 Disabled USB and removable media ports\n\u2022 Controlled maintenance access only\n\u2022 Secure logging and monitoring systems\n\u2022 Hardened operating systems and devices\n\nImportant Point:\nHar access authorized personnel ke through aur documented procedure se hota hai."
+},
+{
+  "id": 167,
+  "category": "Atomic Ornganization",
+  "question": "How do you transfer data between isolated networks?",
+  "answer": "Sir, air-gapped environment mein data transfer controlled and verified process ke through hota hai.\n\nSecure Methods:\n\u2022 Data diodes (one-way transfer systems)\n\u2022 Encrypted removable media (USB with strict scanning)\n\u2022 Secure transfer stations (staging systems)\n\u2022 Malware scanning before and after transfer\n\u2022 Digital signatures and hash verification\n\u2022 Dual authorization (two-person integrity)\n\nKey Concept:\nHar data transfer auditable aur verified hota hai."
+},
+{
+  "id": 168,
+  "category": "Atomic Ornganization",
+  "question": "How do you secure physical access to network equipment?",
+  "answer": "Sir, physical security network security ka first layer hota hai.\n\nProtection Measures:\n\u2022 Restricted access server rooms\n\u2022 Biometric authentication (fingerprint/iris)\n\u2022 CCTV surveillance\n\u2022 Security guards and access logs\n\u2022 Locked server racks\n\u2022 Visitor escort policy\n\u2022 Smart card / RFID access control\n\nImportant Point:\n\u2022 “Only authorized personnel with proper clearance can access critical infrastructure.”"
+},
+{
+  "id": 169,
+  "category": "Atomic Ornganization",
+  "question": "How do you monitor security events in a sensitive environment?",
+  "answer": "Sir, highly sensitive networks mein continuous monitoring essential hoti hai.\n\nMonitoring Methods:\n\u2022 Centralized SIEM (Security Information and Event Management)\n\u2022 Syslog servers for log collection\n\u2022 Real-time alerting systems\n\u2022 IDS/IPS deployment\n\u2022 Network traffic monitoring (NetFlow)\n\u2022 Audit logs review\n\u2022 Behavioral anomaly detection\n\nKey Focus:\n\u2022 Unauthorized access attempts\n\u2022 Configuration changes\n\u2022 Suspicious traffic patterns\n\u2022 Failed login attempts"
+},
+{
+  "id": 170,
+  "category": "Atomic Ornganization",
+  "question": "Explain least privilege and need-to-know access.",
+  "answer": "Least Privilege Principle\nHar user ko sirf minimum required access diya jata hai jo uske kaam ke liye necessary ho.\nExample:\n\u2022 A normal user ko admin rights nahi milte.\n\nNeed-to-Know Principle\n\u2022 User ko sirf wahi information di jati hai jo uske specific job role ke liye required ho.\n Example:\n\u2022 HR staff ko engineering system data access nahi milta.\n\nBenefit:\n\u2022 Insider threat reduce hota hai\n\u2022 Data leakage ka risk kam hota hai\n\u2022 Security posture strong hoti hai"
+},
+{
+  "id": 171,
+  "category": "Atomic Ornganization",
+  "question": "What will you do if a network breach is suspected?",
+  "answer": "Sir, main structured incident response process follow karunga:\n\nStep 1: Identification\n\u2022 Suspicious activity detect karna (logs, alerts, IDS/IPS)\n\nStep 2: Containment\n\u2022 Affected systems isolate karna\n\u2022 Network segmentation activate karna \n\u2022 Malicious traffic block karna\n\nStep 3: Eradication\n\u2022 Malware remove karna\n\u2022 Vulnerability fix karna\n\u2022 Compromised credentials reset karna\n\nStep 4: Recovery \n\u2022 Systems restore karna \n\u2022 Backups se clean data recover karna\n\u2022 Services gradually restore karna \n\n Step 5: Post-Incident Analysis\n\u2022 Root cause analysis karna\n\u2022 Security policies improve karna\n\u2022 Documentation and reporting complete karna"
 }
 ]
